@@ -26,7 +26,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="#"><img src="img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -36,27 +36,27 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+							<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Pages</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
+									<li class="nav-item"><a class="nav-link" href="portfolio-#">Portfolio Details</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-#">Blog Details</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -77,7 +77,7 @@
 							<h5 class="text-uppercase">Software Engineer | Backend Developer</h5>
 							<div class="d-flex align-items-center">
 								<a class="primary_btn" href="#"><span>Hire Me</span></a>
-								<a class="primary_btn tr-bg" href="#"><span>Get CV</span></a>
+								<button class="primary_btn tr-bg" onclick="viewPDF()"><span>Get CV</span></button>
 							</div>
 						</div>
 					</div>
@@ -116,7 +116,7 @@
 						<p>
 							I specialize in backend development and have strong proficiency in PHP, Laravel, CakePHP, SQL, Vue.js, JavaScript, HTML, and CSS. I’m passionate about building scalable systems and writing clean, maintainable code using OOP principles, MVC architecture, and applying data structures and algorithms to solve real-world problems.
 						</p>
-						<a class="primary_btn" href="#"><span>Download CV</span></a>
+						<button class="primary_btn" onclick="viewPDF()"><span>Download CV</span></button>
 					</div>
 				</div>
 			</div>
@@ -454,105 +454,64 @@
 		<!--================End Portfolio Area =================-->
 
 	<!--================ Start Testimonial Area =================-->
-	<div class="testimonial_area section_gap_bottom">
+	<div class="experience_area section_gap_bottom">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="main_title">
-						<h2>client say about me</h2>
-						<p>Is give may shall likeness made yielding spirit a itself togeth created after sea is in beast <br>
-							 beginning signs open god you're gathering ithe</p>
+						<h2>Professional Experience</h2>
+						<p>A journey through my roles as a PHP Developer in various organizations</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="testi_slider owl-carousel">
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t1.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Elite Martin</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t2.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Davil Saden</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t1.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Elite Martin</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t2.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Davil Saden</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t1.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Elite Martin</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="img/testimonials/t2.jpg" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>Davil Saden</h4>
-									<p>Him, made can't called over won't there on divide there male fish beast own his day third seed sixth seas unto. Saw from </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        		</div>
+				<!-- Experience Item 1 -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>PHP Developer</h4>
+						<h5>InTimeDev | Cairo</h5>
+						<p><strong>Duration:</strong> 06/2022 - 05/2023</p>
+						<ul>
+							<li>Worked with PHP and Laravel on multiple CRM projects tailored for real estate companies.</li>
+							<li>Contributed to the development and optimization of CRM solutions that enhanced operational efficiency.</li>
+							<li>Collaborated closely with cross-functional teams to ensure high-quality deliverables and meet client requirements.</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Experience Item 2 -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>PHP Developer</h4>
+						<h5>Atw.ltd | Giza</h5>
+						<p><strong>Duration:</strong> 07/2021 - 06/2022</p>
+						<ul>
+							<li>Specialized in PHP development using the Laravel framework.</li>
+							<li>Worked on projects involving CakePHP, native PHP, and Bitrix24.</li>
+							<li>Collaborated with teams to deliver high-quality projects focused on achieving client goals.</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Experience Item 3 -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>Junior PHP Developer</h4>
+						<h5>Company Not Specified</h5>
+						<p><strong>Duration:</strong> Not Provided</p>
+						<ul>
+							<li>Specialized in Laravel framework development.</li>
+							<li>Contributed to the "BI" ERP system and the "Beshield" teaching and examination system.</li>
+							<li>Developed and maintained backend components ensuring performance and responsiveness.</li>
+							<li>Assisted in database design and optimization for efficient data handling.</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<!--================ End Testimonial Area =================-->
+		<!--================ End Testimonial Area =================-->
 
 	<!--================ Start Newsletter Area =================-->
-	<section class="newsletter_area">
+	<!-- <section class="newsletter_area">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-12">
@@ -575,7 +534,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================ End Newsletter Area =================-->
 
 	<!--================Footer Area =================-->
@@ -627,5 +586,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
 </body>
+
+<script>
+    function viewPDF() {
+      window.open("Mohamed Ahmed Software Engineer.pdf", "_blank");
+    }
+</script>
 
 </html>
