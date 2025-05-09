@@ -1,414 +1,597 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-	<title>Mohamed Ahmed Software Developer</title>
+	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/flexslider.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>Satner Portfolio</title>
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
 </head>
-<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
-	<nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
+
+<body>
+
+	<!--================ Start Header Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="#"><img src="img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-end">
+							<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
+									<li class="nav-item"><a class="nav-link" href="portfolio-#">Portfolio Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-#">Blog Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================ End Header Area =================-->
+
+	<!--================ Start Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="banner_content">
+							<h3 class="text-uppercase">Hello</h3>
+							<h1 class="text-uppercase">I am Mohamed Ahmed</h1>
+							<h5 class="text-uppercase">Software Engineer | Backend Developer</h5>
+							<div class="d-flex align-items-center">
+								<a class="primary_btn" href="#"><span>Hire Me</span></a>
+								<button class="primary_btn tr-bg" onclick="viewPDF()"><span>Get CV</span></button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="home_right_img">
+							<img class="" src="img/banner/home-right.png" alt="Mohamed Ahmed">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--================ End Home Banner Area =================-->
+
+	<!--================ Start About Us Area =================-->
+	<section class="about_area section_gap">
 		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-resume">Resume</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
+			<div class="row justify-content-start align-items-center">
+				<div class="col-lg-5">
+					<div class="about_img">
+						<img class="" src="img/about-us.png" alt="About Mohamed Ahmed">
+					</div>
+				</div>
+	
+				<div class="offset-lg-1 col-lg-5">
+					<div class="main_title text-left">
+						<h2>
+							Let’s <br>
+							introduce <br>
+							myself
+						</h2>
+						<p>
+							I am Mohamed Ahmed, a software engineer and graduate of Helwan University, Faculty of Computers and Artificial Intelligence.
+						</p>
+						<p>
+							I specialize in backend development and have strong proficiency in PHP, Laravel, CakePHP, SQL, Vue.js, JavaScript, HTML, and CSS. I’m passionate about building scalable systems and writing clean, maintainable code using OOP principles, MVC architecture, and applying data structures and algorithms to solve real-world problems.
+						</p>
+						<button class="primary_btn" onclick="viewPDF()"><span>Download CV</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		<!--================ End About Us Area =================-->
+
+	<!--================ Srart Brand Area =================-->
+	<!-- <section class="brand_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo1.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo2.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo3.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo4.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo5.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo6.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo7.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo8.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="img/brands/logo9.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="offset-lg-2 col-lg-4 col-md-6">
+					<div class="client-info">
+						<div class="d-flex mb-50">
+							<span class="lage">10</span>
+							<span class="smll">Years Experience Working</span>
+						</div>
+						<div class="call-now d-flex">
+							<div>
+								<span class="fa fa-phone"></span>
+							</div>
+							<div class="ml-15">
+								<p>call us now</p>
+								<h3>(+1)-800-555-6789</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<!--================ End Brand Area =================-->
+
+	<!--================ Start Features Area =================-->
+<section class="features_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="main_title">
+                    <h2>My Services</h2>
+                    <p>
+                        I’m a backend developer with the ability to build full websites, mobile apps, admin dashboards, and internal systems. I create powerful, scalable, and secure solutions tailored to your business needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row feature_inner">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature_item">
+                    <img src="img/services/s1.png" alt="">
+                    <h4>Backend Development</h4>
+                    <p>Creating secure and scalable APIs and server-side logic using modern backend technologies.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature_item">
+                    <img src="img/services/s2.png" alt="">
+                    <h4>Web Applications</h4>
+                    <p>Building complete and responsive websites powered by efficient backend systems.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature_item">
+                    <img src="img/services/s3.png" alt="">
+                    <h4>Mobile Integration</h4>
+                    <p>Developing backend support for mobile apps with smooth and fast data handling.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature_item">
+                    <img src="img/services/s4.png" alt="">
+                    <h4>Admin Dashboards</h4>
+                    <p>Creating custom dashboards and internal systems to manage your data and operations easily.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+	<!--================ End Features Area =================-->
+
+	<!--================Start Portfolio Area =================-->
+	<section class="portfolio_area" id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title text-left">
+						<h2>Featured Work <br> My Recent Projects</h2>
+					</div>
+				</div>
+			</div>
+	
+			<div class="filters portfolio-filter">
+				<ul>
+					<li class="active" data-filter="*">All</li>
+					<li data-filter=".website">Websites</li>
+					<li data-filter=".mobile">Mobile Apps</li>
+					<li data-filter=".admin">Admin Panels</li>
 				</ul>
 			</div>
-		</div>
-	</nav>
-
-	<section class="site-hero" style="background-image: url(images/image_1.jpg);" id="section-home" data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row intro-text align-items-center justify-content-center">
-				<div class="col-md-10 text-center pt-5">
-
-					<h1 class="site-heading site-animate">Hello, I'm <strong class="d-block">Mohamed Ahmed Ayad</strong></h1>
-					<strong class="d-block text-white text-uppercase letter-spacing">Software Engineer</strong>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="site-section" id="section-portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="section-heading text-center col-md-12">
-					<h2>Featured <strong>Portfolio</strong></h2>
-				</div>
-			</div>
-			<div class="filters-content">
-				<div class="row grid">
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a target="_blank" href="online_store.html">
-									<img   class="image img-fluid" src="images/online_store.png" alt="">
-								</a>             
-							</div>
-							<a href="images/online_store.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<a target="_blank" href="online_store.html">
-								<h4 style="color: #004cff">Online Store</h4>
-							</a>             
-
-							<div class="">WebSite</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a target="_blank" href="privilege.html">
-									<img   class="image img-fluid" src="images/courses.png" alt="">
-								</a>
-							</div>
-							<a href="images/courses.png" class="img-pop-up">  
-								<div class="middle">
-									
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<a  target="_blank" href="privilege.html">
-								<h4 style="color: #004cff">Privilege Education App</h4>
-							</a>
-							<div class="">Mobile App + Admin Panel</div>
-						</div>                                         
-					</div>   
-
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<!-- <a target="_blank" href="#"> -->
-									<img class="image img-fluid" src="images/yes_sir.png" alt="Yes Sir App">
-								<!-- </a> -->
-							</div>
-							<a href="images/yes_sir.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex">
-										<img src="images/preview.png" alt="Preview Icon">
-									</div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<!-- <a target="_blank" href="#"> -->
-								<h4 style="color: #004cff">Yes Sir - Find a Nearby Craftsman</h4>
-							<!-- </a> -->
-							<div class="">Mobile App + Admin Panel</div>
-							<!-- <div class="mt-2"> helps users find nearby craftsmen at fixed price</div> -->
-						</div>                                         
-					</div>
-
-
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a target="_blank" href="tender.html">
-									<img   class="image img-fluid" src="images/tender.png" alt="">
-								</a>
-							</div>
-							<a href="images/tender.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<a  target="_blank" href="tender.html">
-								<h4 style="color: #004cff">tender Website</h4>
-							</a>
-							<div class="">WebSite + Admin Panel</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a target="_blank" href="dlily_map.html">
-									<img   class="image img-fluid" src="images/dalily_map.png" alt="">
-								</a>             
-							</div>
-							<a href="images/dalily_map.png" class="img-pop-up">  
-								<div class="middle">
-										<div class="text align-self-center d-flex"><img   src="dalily_map/preview.png" alt=""></div>
-								</div>
-							</a>             
-						</div>
-						<div class="p-inner">
-							<a target="_blank" href="dlily_map.html">
-								<h4 style="color: #004cff">Dalily Map</h4>
-							</a>             
-								
-							<div class="">Mobile App + Admin Panel</div>
-						</div>                                         
-					</div>
-                
-					<div class="single-portfolio col-sm-4 all packaging">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a  target="_blank" href="can_do.html">
-									<img   class="image img-fluid" src="images/can_do.png" alt="">
-								</a>
-							</div>
-							<a href="images/can_do.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a> 
-
-						</div>
-						<div class="p-inner">
-							<a  target="_blank" href="can_do.html">
-								<h4 style="color: #004cff">Can Do  Medical Company</h4>
-							</a>
-							<div class="">Website Portfolio</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all packaging">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img   class="image img-fluid" src="images/onco.png" alt="">
-							</div>
-							<a href="images/onco.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div> 
-						<div class="p-inner">
-							<h4>Onco Help  Medical Company</h4>
-							<div class="">Website Portfolio</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img   class="image img-fluid" src="images/cancer.png" alt="">
-							</div>
-							<a href="images/cancer.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img   src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Cancer Medical</h4>
-							<div class="">WebSite</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	
-	<section class="site-section " id="section-resume">
+			<div class="filters-content">
+				<div class="row portfolio-grid justify-content-center">
+					<!-- Project: Online Store -->
+
+					<div class="col-lg-4 col-md-6 all mobile admin">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/yessir.png" alt="Yes Sir App">
+								<div class="overlay"></div>
+								<a href="img/portfolio/yessir.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Yes Sir - Find a Nearby Craftsman</h4>
+								<p>Mobile App + Admin Panel</p>
+							</div>
+						</div>
+					</div>
+					
+	
+					<div class="col-lg-4 col-md-6 all mobile admin">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/dubisale.jpg" alt="Dubisale Education App">
+								<div class="overlay"></div>
+								<a href="img/portfolio/dubisale.jpg" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Dubisale Buy or Pay anything</h4>
+								<p>Mobile App + Admin Panel</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 all mobile admin">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/education.jpg" alt="Privilege Education App">
+								<div class="overlay"></div>
+								<a href="img/portfolio/education.jpg" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Privilege Education App</h4>
+								<p>Mobile App + Admin Panel</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project: Privilege Education App -->
+
+
+					<div class="col-lg-4 col-md-6 all website">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/store.jpg" alt="Online Store">
+								<div class="overlay"></div>
+								<a href="img/portfolio/store.jpg" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Online Store</h4>
+								<p>Website</p>
+							</div>
+						</div>
+					</div>
+
+			
+	
+					<!-- Project: Yes Sir App -->
+					
+	
+					<!-- Project: Tender Website -->
+					<div class="col-lg-4 col-md-6 all website admin">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/tender.png" alt="Tender Website">
+								<div class="overlay"></div>
+								<a href="img/portfolio/tender.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Tender Website</h4>
+								<p>Website + Admin Panel</p>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Project: Dalily Map -->
+					<div class="col-lg-4 col-md-6 all mobile admin">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/dalily_map.png" alt="Dalily Map">
+								<div class="overlay"></div>
+								<a href="img/portfolio/dalily_map.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Dalily Map</h4>
+								<p>Mobile App + Admin Panel</p>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Project: Can Do Medical -->
+					<div class="col-lg-4 col-md-6 all website">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/can_do.png" alt="Can Do Medical">
+								<div class="overlay"></div>
+								<a href="img/portfolio/can_do.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Can Do Medical Company</h4>
+								<p>Website Portfolio</p>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Project: Onco Help Medical -->
+					<div class="col-lg-4 col-md-6 all website">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/onco.png" alt="Onco Help Medical">
+								<div class="overlay"></div>
+								<a href="img/portfolio/onco.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Onco Help Medical Company</h4>
+								<p>Website Portfolio</p>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Project: Cancer Medical -->
+					<div class="col-lg-4 col-md-6 all website">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/cancer.png" alt="Cancer Medical">
+								<div class="overlay"></div>
+								<a href="img/portfolio/cancer.png" class="img-gal">
+									<div class="icon"><span class="lnr lnr-cross"></span></div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>Cancer Medical</h4>
+								<p>Website</p>
+							</div>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+	</section>
+		<!--================End Portfolio Area =================-->
+
+	<!--================ Start Testimonial Area =================-->
+	<div class="experience_area section_gap_bottom">
 		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>Professional Experience</h2>
+						<p>My journey as a PHP Developer across various companies and projects</p>
+					</div>
+				</div>
+			</div>
 			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2>My <strong>Resume</strong></h2>
+				<!-- Experience 1: Fabrica CS -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>PHP Developer</h4>
+						<h5>Fabrica CS | Cairo</h5>
+						<p><strong>Duration:</strong> October 2024 – Present</p>
+						<ul>
+							<li>Worked with PHP and Laravel on multiple CRM projects tailored for real estate companies.</li>
+							<li>Contributed to the development and optimization of CRM solutions that enhanced operational efficiency.</li>
+							<li>Collaborated closely with cross-functional teams to ensure high-quality deliverables and meet client requirements.</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<h2 class="mb-5">Education</h2>
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> July 2022</span>
-						<h3>Computer Science, Helwan University </h3>
-						<p>I hold a Bachelor's degree in Computer Science from Helwan University. Through my studies, I 
-							gained a solid foundation in computer science principles and acquired essential knowledge in 
-							programming, algorithms, database management, and software developmen</p>
-						<span class="school">Helwan University</span>
+				<!-- Experience 2: InTimeDev -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>PHP Developer</h4>
+						<h5>InTimeDev | Cairo</h5>
+						<p><strong>Duration:</strong> June 2022 – May 2023</p>
+						<ul>
+							<li>Specialized in PHP development using the Laravel framework.</li>
+							<li>Worked on projects involving CakePHP, native PHP, and Bitrix24.</li>
+							<li>Collaborated with teams to deliver high-quality projects in search of results.</li>
+						</ul>
 					</div>
-
 				</div>
-				<div class="col-md-6">
-
-
-					<h2 class="mb-5">Experience</h2>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> June 2022 - May 2023</span>
-						<h3>InTimeDev Software Company</h3>
-						<p>
-							Backend Developer
-							I worked as a PHP developer specializing in Laravel framework 
-							I also worked on cakephp, php native, and bitrix2 projects 
-							I have also worked on the team on other projects
-						</p>
-						<span class="school">Cairo</span>
-					</div> 
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> July 2021 - June 2022</span>
-						<h3>Atw.Ltd Software Company</h3>
-							<p>Backend Developer
-								junior php developer with Laravel work on many projects I worked as a PHP Developer specializing in 
-								Laravel framework for one year I contributed to the creation of "BI"=> ERP system and a "beshield"=> 
-								Teaching and Examination system</p>
-						<span class="school">Giza</span>
+				<!-- Experience 3: Atw.ltd -->
+				<div class="col-md-12 mb-4">
+					<div class="experience_item p-4 border rounded shadow-sm">
+						<h4>PHP Developer</h4>
+						<h5>Atw.ltd | Giza</h5>
+						<p><strong>Duration:</strong> July 2021 – June 2022</p>
+						<ul>
+							<li>Junior PHP Developer specializing in the Laravel framework.</li>
+							<li>Contributed to the creation of the "BI" ERP system and the "Beshield" Teaching and Examination system.</li>
+							<li>Developed and maintained backend components, ensuring high performance and responsiveness.</li>
+							<li>Assisted in database design and optimization for efficient data retrieval and storage.</li>
+						</ul>
 					</div>
-
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="site-section" id="section-about">
+	</div>
+	
+		<!--================ End Testimonial Area =================-->
+
+	<!--================ Start Newsletter Area =================-->
+	<!-- <section class="newsletter_area">
 		<div class="container">
-			<div class="row mb-5 align-items-center">
-				<div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-					<img   src="images/image_1.jpg" alt="Image placeholder" class="img-fluid">
-				</div>
-				<div class="col-lg-5 pl-lg-5">
-					<div class="section-heading">
-						<h2>About <strong>Me</strong></h2>
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12">
+					<div class="subscription_box text-center">
+						<h2 class="text-uppercase text-white">get update from anywhere</h2>
+						<p class="text-white">
+							Bearing Void gathering light light his eavening unto dont afraid. 
+						</p>
+						<div class="subcribe-form" id="mc_embed_signup">
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+								<div style="position: absolute; left: -5000px;">
+									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+								</div>
+								<button class="primary-btn hover d-inline">Get Started</button>
+								<div class="info"></div>
+							</form>
+						</div>
 					</div>
-					<p class="lead">
-						I am Mohamed Ahmed, a software engineer and graduate of Helwan University, Faculty of Computers and Artificial Intelligence
-						. Specializing in backend development, I am proficient in PHP and Laravel, SQL, HTML, CSS, JavaScript, 
-						PHP, Laravel, CakePHP , Vue.js, object-oriented programming (OOP), the MVC framework, data structures, 
-						algorithms, and problem-solving.</p>
-					<!-- <p class="mb-5  ">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
-
-					<p>
-						<a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Hire Me</a>
-						<!-- <button class="btn btn-secondary px-4 py-2 btn-sm" onclick="viewPDF()">View CV</button> -->
-						<button class="btn btn-success px-4 py-2 btn-sm" onclick="viewPDF()">View CV</button>
-											
-
-						
-					</p>
 				</div>
 			</div>
-
-
 		</div>
-	</section>
+	</section> -->
+	<!--================ End Newsletter Area =================-->
 
-  <script>
+	<!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="footer_top flex-column">
+						<div class="footer_logo">
+							<a href="#">
+								<img src="img/logo.png" alt="">
+							</a>
+							<h4>Follow Me</h4>
+						</div>
+						<div class="footer_social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row footer_bottom justify-content-center">
+				<p class="col-lg-8 col-sm-12 footer-text">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		</div>
+	</footer>
+	<!--================End Footer Area =================-->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="vendors/isotope/isotope-min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="js/gmaps.min.js"></script>
+	<script src="js/theme.js"></script>
+</body>
+
+<script>
     function viewPDF() {
       window.open("Mohamed Ahmed Software Engineer.pdf", "_blank");
     }
+</script>
 
-    function downloadPDF() {
-      var link = document.createElement("a");
-      link.href = "Mohamed Ahmed Software Engineer.pdf";
-      link.download = "pdf.pdf";
-      link.click();
-    }
-  </script>
-
-	<section class="site-section" id="section-contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2>Get <strong>In Touch</strong></h2>
-					</div>
-				</div>
-
-				<div class="col-md-7 mb-5 mb-md-0">
-					<form action="" class="site-form">
-						<h3 class="mb-5">Get In Touch</h3>
-						<div class="form-group">
-							<input type="text" class="form-control px-3 py-4" name="name" id="name" placeholder="Your Name">
-						</div>
-						
-						<div class="form-group mb-5">
-							<textarea id="message" name="message" class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="button" onclick="SendMessage()" class="btn btn-primary  px-4 py-3" value="Send Message">
-						</div>
-					</form>
-					
-				</div>
-				<div class="col-md-5 pl-md-5">
-					<h3 class="mb-5">My Contact Details</h3>
-					<ul class="site-contact-details">
-						<li>
-							<span class="text-uppercase">Email</span>
-							m7mda3yad@gmail.com
-						</li>
-						<li>
-							<span class="text-uppercase">Phone</span>
-							+201025381843
-						</li>
-
-						<li>
-							<span class="text-uppercase">Address</span>
-							Egypt - Cairo <br>
-							Naser City  <br>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<footer class="site-footer">
-		<div class="container">
-
-
-			<div class="row mb-5">
-				<div class="col-md-12 text-center">
-					<p>
-						<!-- <a href="#" class="social-item"><span class="icon-facebook2"></span></a>
-						<a href="#" class="social-item"><span class="icon-twitter"></span></a> -->
-						<a href="https://github.com/m7mda3yad" class="social-item"><span class="icon-github"></span></a>
-						<a href="https://linkedin.com/in/mohamed-ahmed-b866662a9" class="social-item"><span class="icon-linkedin2"></span></a>
-						<!-- <a href="#" class="social-item"><span class="icon-vimeo"></span></a> -->
-					</p>
-				</div>
-			</div>
-			
-		</div>
-	</footer>
-
-
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/vendor/popper.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/vendor/jquery.easing.1.3.js"></script>
-	<script src="js/vendor/jquery.stellar.min.js"></script>
-	<script src="js/vendor/jquery.waypoints.min.js"></script>
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-	<script src="js/custom.js"></script>
-	<Script>
-		function SendMessage()
-		{
-			name = document.getElementById("name").value;
-			message = document.getElementById("message").value;
-			window.location.replace("https://api.whatsapp.com/send/?phone=%2B201025381843&text="+"hello i,m"+name+"  "+message+"&type=phone_number&app_absent=0");
-		}
-	</Script>
-    </body>
-    </html>
+</html>
