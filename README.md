@@ -63,8 +63,8 @@ We offer tailored development services to fit business needs:
 
 ## 📞 Contact
 
-- 📧 Email: [YourEmail@example.com]
-- 🌐 Website: [YourWebsite.com]
+- 📧 Email: [m7mda3yad@gmail.com]
+- 🌐 Website: [https://m7mda3yad.github.io/portfolio]
 - 📍 Location: Cairo, Egypt
 
 ---
