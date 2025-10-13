@@ -1,597 +1,472 @@
-<!doctype html>
-<html lang="en">
-
+	<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
-	<title>Satner Portfolio</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="vendors/linericon/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-	<!-- main css -->
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد أحمد | مهندس برمجيات متخصص</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN (لأيقونات احترافية) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* تخصيص إضافي بسيط */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        .header-bg {
+            background-color: #1e3a8a; /* Dark Blue */
+        }
+        .text-primary-blue {
+            color: #1e3a8a;
+        }
+        .bg-primary-blue {
+            background-color: #1e3a8a;
+        }
+        .shadow-lg-custom {
+            box-shadow: 0 0 30px rgba(30, 58, 138, 0.15); /* More defined shadow */
+        }
+        .skill-tag {
+            /* تم تغيير الألوان قليلاً لتمييز القيمة المضافة */
+            background-color: #fffbeb; /* Light Yellow/Cream */
+            color: #d97706; /* Dark Orange/Yellow */
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600; /* أثقل لإبرازها */
+            margin-bottom: 8px;
+            display: inline-block;
+            border: 1px solid #fcd34d;
+        }
+        /* لتحديد حجم الصورة في المشاريع وضمان ثباتها */
+        .portfolio-img {
+            width: 100%;
+            height: 420px; /* ارتفاع ثابت لجميع الصور */
+            object-fit: cover; /* لضمان تغطية الصورة للمساحة دون تشوه */
+        }
+    </style>
+    <script>
+        // تهيئة Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e3a8a',
+                        'secondary-gray': '#e5e7eb',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body onload="lucide.createIcons()">
+    <!-- شريط التنقل (Header/Navbar) -->
+    <header class="header-bg sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- الشعار / الاسم -->
+            <a href="#" class="text-2xl font-bold text-white tracking-widest">
+                محمد أحمد | مهندس برمجيات
+            </a>
+            
+            <!-- قائمة التنقل -->
+            <nav class="hidden md:flex space-x-8 space-x-reverse text-lg">
+                <a href="#hero" class="text-white hover:text-indigo-200 transition duration-300">الرئيسية</a>
+                <a href="#about" class="text-white hover:text-indigo-200 transition duration-300">نبذة عني</a>
+                <a href="#systems_focus" class="text-white hover:text-indigo-200 transition duration-300">مجال التخصص</a>
+                <a href="#solutions" class="text-white hover:text-indigo-200 transition duration-300">الخدمات</a>
+                <a href="#portfolio" class="text-white hover:text-indigo-200 transition duration-300">المشاريع</a>
+                <a href="#experience" class="text-white hover:text-indigo-200 transition duration-300">الخبرة</a>
+                <a href="#contact" class="text-white hover:text-indigo-200 transition duration-300">تواصل</a>
+            </nav>
+            
+            <!-- زر قائمة الجوال -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+        
+        <!-- قائمة الجوال المنسدلة -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-primary-blue shadow-lg">
+            <nav class="flex flex-col space-y-2 p-4 text-lg">
+                <a href="#hero" class="text-white hover:bg-indigo-700 p-2 rounded block">الرئيسية</a>
+                <a href="#about" class="text-white hover:bg-indigo-700 p-2 rounded block">نبذة عني</a>
+                <a href="#systems_focus" class="text-white hover:bg-indigo-700 p-2 rounded block">مجال التخصص</a>
+                <a href="#solutions" class="text-white hover:bg-indigo-700 p-2 rounded block">الخدمات</a>
+                <a href="#portfolio" class="text-white hover:bg-indigo-700 p-2 rounded block">المشاريع</a>
+                <a href="#experience" class="text-white hover:bg-indigo-700 p-2 rounded block">الخبرة</a>
+                <a href="#contact" class="text-white hover:bg-indigo-700 p-2 rounded block">تواصل</a>
+            </nav>
+        </div>
+    </header>
 
-<body>
-
-	<!--================ Start Header Area =================-->
-	<header class="header_area">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="#"><img src="img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-#">Portfolio Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-#">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!--================ End Header Area =================-->
-
-	<!--================ Start Home Banner Area =================-->
-	<section class="home_banner_area">
-		<div class="banner_inner">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7">
-						<div class="banner_content">
-							<h3 class="text-uppercase">Hello</h3>
-							<h1 class="text-uppercase">I am Mohamed Ahmed</h1>
-							<h5 class="text-uppercase">Software Engineer | Backend Developer</h5>
-							<div class="d-flex align-items-center">
-								<a class="primary_btn" href="#"><span>Hire Me</span></a>
-								<button class="primary_btn tr-bg" onclick="viewPDF()"><span>Get CV</span></button>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-5">
-						<div class="home_right_img">
-							<img class="" src="img/banner/home-right.png" alt="Mohamed Ahmed">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!--================ End Home Banner Area =================-->
-
-	<!--================ Start About Us Area =================-->
-	<section class="about_area section_gap">
-		<div class="container">
-			<div class="row justify-content-start align-items-center">
-				<div class="col-lg-5">
-					<div class="about_img">
-						<img class="" src="img/about-us.png" alt="About Mohamed Ahmed">
-					</div>
-				</div>
-	
-				<div class="offset-lg-1 col-lg-5">
-					<div class="main_title text-left">
-						<h2>
-							Let’s <br>
-							introduce <br>
-							myself
-						</h2>
-						<p>
-							I am Mohamed Ahmed, a software engineer and graduate of Helwan University, Faculty of Computers and Artificial Intelligence.
-						</p>
-						<p>
-							I specialize in backend development and have strong proficiency in PHP, Laravel, CakePHP, SQL, Vue.js, JavaScript, HTML, and CSS. I’m passionate about building scalable systems and writing clean, maintainable code using OOP principles, MVC architecture, and applying data structures and algorithms to solve real-world problems.
-						</p>
-						<button class="primary_btn" onclick="viewPDF()"><span>Download CV</span></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-		<!--================ End About Us Area =================-->
-
-	<!--================ Srart Brand Area =================-->
-	<!-- <section class="brand_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo1.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo2.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo3.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo4.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo5.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo6.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo7.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo8.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="img/brands/logo9.png" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="offset-lg-2 col-lg-4 col-md-6">
-					<div class="client-info">
-						<div class="d-flex mb-50">
-							<span class="lage">10</span>
-							<span class="smll">Years Experience Working</span>
-						</div>
-						<div class="call-now d-flex">
-							<div>
-								<span class="fa fa-phone"></span>
-							</div>
-							<div class="ml-15">
-								<p>call us now</p>
-								<h3>(+1)-800-555-6789</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!--================ End Brand Area =================-->
-
-	<!--================ Start Features Area =================-->
-<section class="features_area">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="main_title">
-                    <h2>My Services</h2>
-                    <p>
-                        I’m a backend developer with the ability to build full websites, mobile apps, admin dashboards, and internal systems. I create powerful, scalable, and secure solutions tailored to your business needs.
-                    </p>
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section id="hero" class="py-20 lg:py-32 text-center bg-white shadow-xl">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto flex flex-col items-center">
+                <!-- الصورة الشخصية المضافة -->
+                <div class="mb-6">
+                    <img src="https://placehold.co/150x150/1e3a8a/ffffff?text=MA" alt="الصورة الشخصية" class="rounded-full ring-4 ring-primary-blue shadow-2xl w-36 h-36 object-cover">
+                </div>
+                
+                <h3 class="text-xl sm:text-2xl font-medium text-gray-500 mb-2">أهلاً بك، أنا</h3>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-blue mb-4 leading-tight">
+                    محمد أحمد
+                </h1>
+                <!-- تم التركيز على مهندس برمجيات بشكل عام -->
+                <h2 class="text-2xl sm:text-3xl font-semibold text-yellow-600 mb-8">
+                    مهندس برمجيات (Software Engineer) | متخصص في بناء الأنظمة القابلة للتوسع
+                </h2>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition duration-300 shadow-lg-custom">
+                        <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                        تواصل معي الآن
+                    </a>
+                    <button onclick="viewPDF()" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-blue text-base font-medium rounded-full text-primary-blue bg-white hover:bg-primary-blue hover:text-white transition duration-300 shadow-lg-custom">
+                        <i data-lucide="file-text" class="w-5 h-5 ml-2"></i>
+                        طلب السيرة الذاتية (CV)
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="row feature_inner">
-            <div class="col-lg-3 col-md-6">
-                <div class="feature_item">
-                    <img src="img/services/s1.png" alt="">
-                    <h4>Backend Development</h4>
-                    <p>Creating secure and scalable APIs and server-side logic using modern backend technologies.</p>
+    </section>
+
+    <!-- قسم تخصص الأنظمة (Updated Focus Section) -->
+    <section id="systems_focus" class="py-16 lg:py-24 bg-secondary-gray border-t border-gray-300">
+        <div class="container mx-auto px-4">
+            <!-- تم تغيير العنوان ليصبح "مجال التخصص" ويشمل جميع الأنظمة التي تعمل عليها -->
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-10">مجال التخصص: الأنظمة المؤسسية والتطبيقات المعقدة</h2>
+            <p class="text-xl text-center text-gray-700 max-w-4xl mx-auto mb-12">
+                كـ   مهندس برمجيات  ، أركز على بناء وتطوير أنظمة متكاملة وموثوقة. خبرتي تشمل جميع أنواع المشاريع، من   ERP و CRM   إلى   تطبيقات الموبايل المتقدمة   ومنصات   التجارة الإلكترونية   وأي نظام معقد يتطلب هندسة برمجية قوية.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">أهم أنواع الأنظمة التي أطورها:</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                
+                <!-- موديل 1: أنظمة تخطيط موارد المؤسسات (ERP) -->
+                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-500">
+                    <i data-lucide="building-2" class="w-6 h-6 text-teal-600 mb-2"></i>
+                    <h4 class="text-lg font-bold text-gray-900">أنظمة ERP المتكاملة</h4>
+                    <p class="text-sm text-gray-600">هندسة أنظمة إدارة الحسابات، المخزون، والموارد البشرية للشركات الكبيرة.</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature_item">
-                    <img src="img/services/s2.png" alt="">
-                    <h4>Web Applications</h4>
-                    <p>Building complete and responsive websites powered by efficient backend systems.</p>
+
+                <!-- موديل 2: أنظمة إدارة علاقات العملاء (CRM) -->
+                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-yellow-500">
+                    <i data-lucide="handshake" class="w-6 h-6 text-yellow-600 mb-2"></i>
+                    <h4 class="text-lg font-bold text-gray-900">حلول CRM وإدارة المبيعات</h4>
+                    <p class="text-sm text-gray-600">بناء أنظمة لتتبع العملاء، المبيعات، والدعم الفني بكفاءة عالية.</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature_item">
-                    <img src="img/services/s3.png" alt="">
-                    <h4>Mobile Integration</h4>
-                    <p>Developing backend support for mobile apps with smooth and fast data handling.</p>
+
+                <!-- موديل 3: تطبيقات الموبايل (Backend) -->
+                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-red-500">
+                    <i data-lucide="smartphone" class="w-6 h-6 text-red-600 mb-2"></i>
+                    <h4 class="text-lg font-bold text-gray-900">بنية تطبيقات الموبايل</h4>
+                    <p class="text-sm text-gray-600">تطوير APIs سريعة وآمنة تدعم تطبيقات iOS و Android.</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature_item">
-                    <img src="img/services/s4.png" alt="">
-                    <h4>Admin Dashboards</h4>
-                    <p>Creating custom dashboards and internal systems to manage your data and operations easily.</p>
+
+                <!-- موديل 4: منصات التجارة الإلكترونية -->
+                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-indigo-500">
+                    <i data-lucide="shopping-cart" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                    <h4 class="text-lg font-bold text-gray-900">منصات التجارة الإلكترونية (E-Commerce)</h4>
+                    <p class="text-sm text-gray-600">إنشاء متاجر إلكترونية قابلة للتوسع مع أنظمة دفع وشحن متكاملة.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <!-- قسم نبذة عني (About Me) -->
+    <section id="about" class="py-16 lg:py-24 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap lg:flex-nowrap items-center justify-between">
+                <!-- صورة وهمية -->
+                <div class="w-full lg:w-5/12 mb-8 lg:mb-0 lg:ml-12">
+                    <img src="erp.png" alt="صورة محمد أحمد" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                </div>
+                
+                <!-- المحتوى -->
+                <div class="w-full lg:w-7/12">
+                    <h2 class="text-4xl font-bold text-primary-blue mb-6">دعني أقدم نفسي كمهندس برمجيات</h2>
+                    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
 
-	<!--================ End Features Area =================-->
+أنا محمد أحمد، مهندس برمجيات (Software Engineer) متخصص في تصميم وتطوير الأنظمة المعقدة والقابلة للتوسع. خريج كلية الحاسبات والذكاء الاصطناعي – جامعة حلوان.                   
+					</p>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+أعمل على بناء بنية برمجية قوية ومنظمة لمشروعك، لضمان أن النظام يكون سريع، آمن، وقابل للنمو مع توسّع أعمالك. أستخدم أفضل الأدوات والممارسات العالمية لتقديم حلول برمجية مستقرة واحترافية تشمل أنظمة ERP, CRM, E-Commerce، وتطبيقات الموبايل.                    </p>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">ما أستطيع تقديمه لمشروعك: (موجّه للعميل)</h4>
+                        <!-- تم استبدال المصطلحات التقنية بقيمة العمل -->
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-tag">بناء أنظمة متكاملة ومستقرة</span>
+                            <span class="skill-tag">تصميم قواعد بيانات سريعة للبيانات الضخمة</span>
+                            <span class="skill-tag">ضمان قابلية التوسع والأداء العالي</span>
+                            <span class="skill-tag">تطوير واجهات الإدارة الاحترافية (APIs)</span>
+                            <span class="skill-tag">حلول التجارة الإلكترونية والموبايل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!--================Start Portfolio Area =================-->
-	<section class="portfolio_area" id="portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title text-left">
-						<h2>Featured Work <br> My Recent Projects</h2>
-					</div>
-				</div>
-			</div>
-	
-			<div class="filters portfolio-filter">
-				<ul>
-					<li class="active" data-filter="*">All</li>
-					<li data-filter=".website">Websites</li>
-					<li data-filter=".mobile">Mobile Apps</li>
-					<li data-filter=".admin">Admin Panels</li>
-				</ul>
-			</div>
-	
-			<div class="filters-content">
-				<div class="row portfolio-grid justify-content-center">
-					<!-- Project: Online Store -->
+    <!-- قسم الخدمات (Services Section) - مختصر -->
+    <section id="solutions" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">الخدمات التي أقدمها في هندسة البرمجيات</h2>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- بطاقة 1: Backend Development -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
+                    <div class="flex justify-center mb-4"> <i data-lucide="server" class="w-8 h-8 text-red-600"></i> </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">بناء الأنظمة المخصصة</h3>
+                    <p class="text-gray-600 text-center text-sm">تصميم وتطبيق الأنظمة الخلفية (Backend) القوية لأي نوع من المشاريع.</p>
+                </div>
 
-					<div class="col-lg-4 col-md-6 all mobile admin">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/yessir.png" alt="Yes Sir App">
-								<div class="overlay"></div>
-								<a href="img/portfolio/yessir.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Yes Sir - Find a Nearby Craftsman</h4>
-								<p>Mobile App + Admin Panel</p>
-							</div>
-						</div>
-					</div>
-					
-	
-					<div class="col-lg-4 col-md-6 all mobile admin">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/dubisale.jpg" alt="Dubisale Education App">
-								<div class="overlay"></div>
-								<a href="img/portfolio/dubisale.jpg" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Dubisale Buy or Pay anything</h4>
-								<p>Mobile App + Admin Panel</p>
-							</div>
-						</div>
-					</div>
+                <!-- بطاقة 2: Web Applications -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
+                    <div class="flex justify-center mb-4"> <i data-lucide="layout-grid" class="w-8 h-8 text-yellow-600"></i> </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">هندسة قواعد البيانات</h3>
+                    <p class="text-gray-600 text-center text-sm">بناء هياكل قواعد بيانات فعالة وموثوقة وقابلة للتوسع.</p>
+                </div>
+                
+                <!-- بطاقة 3: Mobile Integration -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
+                    <div class="flex justify-center mb-4"> <i data-lucide="zap" class="w-8 h-8 text-green-600"></i> </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">تطوير APIs سريعة</h3>
+                    <p class="text-gray-600 text-center text-sm">إنشاء واجهات برمجية (APIs) تدعم تطبيقات الويب والموبايل بفعالية.</p>
+                </div>
+                
+                <!-- بطاقة 4: Admin Dashboards -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
+                    <div class="flex justify-center mb-4"> <i data-lucide="settings" class="w-8 h-8 text-blue-600"></i> </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">أنظمة الإدارة ولوحات التحكم</h3>
+                    <p class="text-gray-600 text-center text-sm">تطوير لوحات تحكم مخصصة لإدارة العمليات والبيانات بسهولة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<div class="col-lg-4 col-md-6 all mobile admin">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/education.jpg" alt="Privilege Education App">
-								<div class="overlay"></div>
-								<a href="img/portfolio/education.jpg" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Privilege Education App</h4>
-								<p>Mobile App + Admin Panel</p>
-							</div>
-						</div>
-					</div>
+    <!-- قسم أعمالنا (Portfolio) - تم تحديث مسارات الصور -->
+    <section id="portfolio" class="py-16 lg:py-24 bg-secondary-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">أبرز مشاريعي الأخيرة</h2>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- مشروع 1: Yes Sir - Find a Nearby Craftsman -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/yessir.png" alt="مشروع تطبيق Yes Sir" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Yes Sir - Find a Nearby Craftsman</h3>
+                        <p class="text-gray-700 text-sm mb-2">نظام كامل: تطبيق موبايل + لوحة تحكم إدارية</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+                        </div>
+                    </div>
+                </div>
 
-					<!-- Project: Privilege Education App -->
+                <!-- مشروع 2: Dubisale Buy or Pay anything -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/dubisale.jpg" alt="مشروع تطبيق Dubisale" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dubisale Buy or Pay anything</h3>
+                        <p class="text-gray-700 text-sm mb-2">نظام كامل: تطبيق موبايل + لوحة تحكم إدارية</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- مشروع 3: Privilege Education App -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/education.jpg" alt="مشروع تطبيق Privilege" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Privilege Education App</h3>
+                        <p class="text-gray-700 text-sm mb-2">نظام تعليمي: تطبيق موبايل + لوحة تحكم</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Education System</span> <span class="skill-tag">Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مشروع 4: Online Store -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/store.jpg" alt="مشروع متجر إلكتروني" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Online Store</h3>
+                        <p class="text-gray-700 text-sm mb-2">منصة تجارة إلكترونية متكاملة</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">E-Commerce</span>
+                        </div>
+                    </div>
+                </div>              
+    
+                <!-- مشروع 5: Tender Website -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/tender.png" alt="مشروع موقع Tender" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Tender Website</h3>
+                        <p class="text-gray-700 text-sm mb-2">منصة مناقصات: موقع إلكتروني + إدارة</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Custom System</span> <span class="skill-tag">Admin</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- مشروع 6: Dalily Map -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/dalily_map.png" alt="مشروع تطبيق دليلي ماب" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dalily Map</h3>
+                        <p class="text-gray-700 text-sm mb-2">تطبيق خرائط ودلائل: موبايل + نظام إدارة</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- مشروع 7: Can Do Medical Company -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/can_do.png" alt="مشروع Can Do Medical" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Can Do Medical Company</h3>
+                        <p class="text-gray-700 text-sm mb-2">موقع تعريفي وعرض أعمال لشركة طبية</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Website</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- مشروع 8: Onco Help Medical Company -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/onco.png" alt="مشروع Onco Help Medical" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Onco Help Medical Company</h3>
+                        <p class="text-gray-700 text-sm mb-2">موقع تعريفي وعرض أعمال لشركة طبية</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Website</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- مشروع 9: Cancer Medical -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                    <!-- الصورة الفعلية للمشروع -->
+                    <img src="img/portfolio/cancer.png" alt="مشروع Cancer Medical" class="portfolio-img">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Cancer Medical</h3>
+                        <p class="text-gray-700 text-sm mb-2">موقع معلومات طبي</p>
+                        <div class="flex flex-wrap gap-1 text-xs">
+                            <span class="skill-tag">Website</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<div class="col-lg-4 col-md-6 all website">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/store.jpg" alt="Online Store">
-								<div class="overlay"></div>
-								<a href="img/portfolio/store.jpg" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Online Store</h4>
-								<p>Website</p>
-							</div>
-						</div>
-					</div>
+    <!-- قسم الخبرة المهنية (Professional Experience) -->
+    <section id="experience" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">مسيرتي المهنية</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <!-- الخبرة 1: Fabrica CS -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-red-600">
+                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات (Software Engineer)</h4>
+                    <h5 class="text-md font-semibold text-red-600 mb-2">Fabrica CS | القاهرة</h5>
+                    <p class="text-sm text-gray-500 mb-3">  المدة:   أكتوبر 2024 – حتى الآن</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
+                        <li>هندسة وتطوير   أنظمة CRM مخصصة   لشركات التطوير العقاري.</li>
+                        <li>التركيز على بناء حلول قابلة للتوسع لضمان الكفاءة التشغيلية العالية.</li>
+                    </ul>
+                </div>
 
-			
-	
-					<!-- Project: Yes Sir App -->
-					
-	
-					<!-- Project: Tender Website -->
-					<div class="col-lg-4 col-md-6 all website admin">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/tender.png" alt="Tender Website">
-								<div class="overlay"></div>
-								<a href="img/portfolio/tender.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Tender Website</h4>
-								<p>Website + Admin Panel</p>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Project: Dalily Map -->
-					<div class="col-lg-4 col-md-6 all mobile admin">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/dalily_map.png" alt="Dalily Map">
-								<div class="overlay"></div>
-								<a href="img/portfolio/dalily_map.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Dalily Map</h4>
-								<p>Mobile App + Admin Panel</p>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Project: Can Do Medical -->
-					<div class="col-lg-4 col-md-6 all website">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/can_do.png" alt="Can Do Medical">
-								<div class="overlay"></div>
-								<a href="img/portfolio/can_do.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Can Do Medical Company</h4>
-								<p>Website Portfolio</p>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Project: Onco Help Medical -->
-					<div class="col-lg-4 col-md-6 all website">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/onco.png" alt="Onco Help Medical">
-								<div class="overlay"></div>
-								<a href="img/portfolio/onco.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Onco Help Medical Company</h4>
-								<p>Website Portfolio</p>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Project: Cancer Medical -->
-					<div class="col-lg-4 col-md-6 all website">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/cancer.png" alt="Cancer Medical">
-								<div class="overlay"></div>
-								<a href="img/portfolio/cancer.png" class="img-gal">
-									<div class="icon"><span class="lnr lnr-cross"></span></div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>Cancer Medical</h4>
-								<p>Website</p>
-							</div>
-						</div>
-					</div>
-	
-				</div>
-			</div>
-		</div>
-	</section>
-		<!--================End Portfolio Area =================-->
+                <!-- الخبرة 2: InTimeDev -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-blue-600">
+                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات (Software Engineer)</h4>
+                    <h5 class="text-md font-semibold text-blue-600 mb-2">InTimeDev | القاهرة</h5>
+                    <p class="text-sm text-gray-500 mb-3">  المدة:   يونيو 2022 – مايو 2023</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
+                        <li>تطوير وهندسة الواجهات الخلفية (Backend) لمشاريع الويب.</li>
+                        <li>ساهمت في مشاريع ويب متنوعة مع التركيز على جودة النظام وأدائه.</li>
+                    </ul>
+                </div>
 
-	<!--================ Start Testimonial Area =================-->
-	<div class="experience_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="main_title">
-						<h2>Professional Experience</h2>
-						<p>My journey as a PHP Developer across various companies and projects</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<!-- Experience 1: Fabrica CS -->
-				<div class="col-md-12 mb-4">
-					<div class="experience_item p-4 border rounded shadow-sm">
-						<h4>PHP Developer</h4>
-						<h5>Fabrica CS | Cairo</h5>
-						<p><strong>Duration:</strong> October 2024 – Present</p>
-						<ul>
-							<li>Worked with PHP and Laravel on multiple CRM projects tailored for real estate companies.</li>
-							<li>Contributed to the development and optimization of CRM solutions that enhanced operational efficiency.</li>
-							<li>Collaborated closely with cross-functional teams to ensure high-quality deliverables and meet client requirements.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Experience 2: InTimeDev -->
-				<div class="col-md-12 mb-4">
-					<div class="experience_item p-4 border rounded shadow-sm">
-						<h4>PHP Developer</h4>
-						<h5>InTimeDev | Cairo</h5>
-						<p><strong>Duration:</strong> June 2022 – May 2023</p>
-						<ul>
-							<li>Specialized in PHP development using the Laravel framework.</li>
-							<li>Worked on projects involving CakePHP, native PHP, and Bitrix24.</li>
-							<li>Collaborated with teams to deliver high-quality projects in search of results.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Experience 3: Atw.ltd -->
-				<div class="col-md-12 mb-4">
-					<div class="experience_item p-4 border rounded shadow-sm">
-						<h4>PHP Developer</h4>
-						<h5>Atw.ltd | Giza</h5>
-						<p><strong>Duration:</strong> July 2021 – June 2022</p>
-						<ul>
-							<li>Junior PHP Developer specializing in the Laravel framework.</li>
-							<li>Contributed to the creation of the "BI" ERP system and the "Beshield" Teaching and Examination system.</li>
-							<li>Developed and maintained backend components, ensuring high performance and responsiveness.</li>
-							<li>Assisted in database design and optimization for efficient data retrieval and storage.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-		<!--================ End Testimonial Area =================-->
+                <!-- الخبرة 3: Atw.ltd -->
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-green-600">
+                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات مبتدئ (Junior Software Engineer)</h4>
+                    <h5 class="text-md font-semibold text-green-600 mb-2">Atw.ltd | الجيزة</h5>
+                    <p class="text-sm text-gray-500 mb-3">  المدة:   يوليو 2021 – يونيو 2022</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
+                        <li>ساهمت في إنشاء   نظام ERP   متكامل ونظام للتدريس والامتحانات.</li>
+                        <li>تطوير وصيانة المكونات الأساسية لضمان استقرار النظام وسرعة استجابته.</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-	<!--================ Start Newsletter Area =================-->
-	<!-- <section class="newsletter_area">
-		<div class="container">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-12">
-					<div class="subscription_box text-center">
-						<h2 class="text-uppercase text-white">get update from anywhere</h2>
-						<p class="text-white">
-							Bearing Void gathering light light his eavening unto dont afraid. 
-						</p>
-						<div class="subcribe-form" id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
-								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-								<div style="position: absolute; left: -5000px;">
-									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-								</div>
-								<button class="primary-btn hover d-inline">Get Started</button>
-								<div class="info"></div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!--================ End Newsletter Area =================-->
+    <!-- قسم التواصل (Contact Section) -->
+    <section id="contact" class="py-16 lg:py-24 bg-primary-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">هل تبحث عن مهندس برمجيات لتنفيذ فكرتك؟</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                دعنا نتحدث حول كيفية هندسة نظام متكامل وقابل للتوسع يلبي احتياجات مشروعك في أي مجال: ERP، CRM، التجارة الإلكترونية، أو تطبيقات الموبايل.
+            </p>
+            <a href="mailto:mohamed.ahmed@example.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-primary-blue bg-white hover:bg-gray-200 md:py-4 md:text-lg md:px-10 transition duration-300 shadow-lg-custom">
+                <i data-lucide="mail" class="w-5 h-5 ml-2"></i>
+                تواصل عبر البريد الإلكتروني
+            </a>
+        </div>
+    </section>
 
-	<!--================Footer Area =================-->
-	<footer class="footer_area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-12">
-					<div class="footer_top flex-column">
-						<div class="footer_logo">
-							<a href="#">
-								<img src="img/logo.png" alt="">
-							</a>
-							<h4>Follow Me</h4>
-						</div>
-						<div class="footer_social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row footer_bottom justify-content-center">
-				<p class="col-lg-8 col-sm-12 footer-text">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		</div>
-	</footer>
-	<!--================End Footer Area =================-->
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 space-x-reverse mb-3">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; <span id="year"></span> محمد أحمد. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript لتشغيل قائمة الجوال وتحديث السنة في الفوتر
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/stellar.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-	<script src="vendors/isotope/isotope-min.js"></script>
-	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/mail-script.js"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="js/gmaps.min.js"></script>
-	<script src="js/theme.js"></script>
-</body>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-<script>
-    function viewPDF() {
-      window.open("Mohamed Ahmed Software Engineer.pdf", "_blank");
-    }
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // إغلاق القائمة عند النقر على رابط (في الجوال)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+		function viewPDF() {
+			window.open("Mohamed Ahmed Software Engineer.pdf", "_blank");
+		}
 </script>
 
+
+</body>
 </html>
