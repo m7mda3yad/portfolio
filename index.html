@@ -1,15 +1,13 @@
-	<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد أحمد | مهندس برمجيات متخصص</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Mohamed Ahmed | Specialized Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN (لأيقونات احترافية) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* تخصيص إضافي بسيط */
+        /* Custom basic styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Light gray background */
@@ -27,26 +25,26 @@
             box-shadow: 0 0 30px rgba(30, 58, 138, 0.15); /* More defined shadow */
         }
         .skill-tag {
-            /* تم تغيير الألوان قليلاً لتمييز القيمة المضافة */
+            /* Slightly changed colors for added value distinction */
             background-color: #fffbeb; /* Light Yellow/Cream */
             color: #d97706; /* Dark Orange/Yellow */
             padding: 4px 12px;
             border-radius: 9999px;
             font-size: 0.875rem;
-            font-weight: 600; /* أثقل لإبرازها */
+            font-weight: 600; /* Heavier for prominence */
             margin-bottom: 8px;
             display: inline-block;
             border: 1px solid #fcd34d;
         }
-        /* لتحديد حجم الصورة في المشاريع وضمان ثباتها */
+        /* To define project image size and ensure consistency */
         .portfolio-img {
             width: 100%;
-            height: 420px; /* ارتفاع ثابت لجميع الصور */
-            object-fit: cover; /* لضمان تغطية الصورة للمساحة دون تشوه */
+            height: 420px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
         }
     </style>
     <script>
-        // تهيئة Tailwind
+        // Tailwind Configuration
         tailwind.config = {
             theme: {
                 extend: {
@@ -60,147 +58,129 @@
     </script>
 </head>
 <body onload="lucide.createIcons()">
-    <!-- شريط التنقل (Header/Navbar) -->
     <header class="header-bg sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- الشعار / الاسم -->
             <a href="#" class="text-2xl font-bold text-white tracking-widest">
-                محمد أحمد | مهندس برمجيات
+                Mohamed Ahmed | Software Engineer
             </a>
             
-            <!-- قائمة التنقل -->
-            <nav class="hidden md:flex space-x-8 space-x-reverse text-lg">
-                <a href="#hero" class="text-white hover:text-indigo-200 transition duration-300">الرئيسية</a>
-                <a href="#about" class="text-white hover:text-indigo-200 transition duration-300">نبذة عني</a>
-                <a href="#systems_focus" class="text-white hover:text-indigo-200 transition duration-300">مجال التخصص</a>
-                <a href="#solutions" class="text-white hover:text-indigo-200 transition duration-300">الخدمات</a>
-                <a href="#portfolio" class="text-white hover:text-indigo-200 transition duration-300">المشاريع</a>
-                <a href="#experience" class="text-white hover:text-indigo-200 transition duration-300">الخبرة</a>
-                <a href="#contact" class="text-white hover:text-indigo-200 transition duration-300">تواصل</a>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#hero" class="text-white hover:text-indigo-200 transition duration-300">Home</a>
+                <a href="#about" class="text-white hover:text-indigo-200 transition duration-300">About Me</a>
+                <a href="#systems_focus" class="text-white hover:text-indigo-200 transition duration-300">Specialization</a>
+                <a href="#solutions" class="text-white hover:text-indigo-200 transition duration-300">Services</a>
+                <a href="#portfolio" class="text-white hover:text-indigo-200 transition duration-300">Portfolio</a>
+                <a href="#experience" class="text-white hover:text-indigo-200 transition duration-300">Experience</a>
+                <a href="#contact" class="text-white hover:text-indigo-200 transition duration-300">Contact</a>
             </nav>
             
-            <!-- زر قائمة الجوال -->
             <button id="menu-button" class="md:hidden text-white focus:outline-none">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
         
-        <!-- قائمة الجوال المنسدلة -->
         <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-primary-blue shadow-lg">
             <nav class="flex flex-col space-y-2 p-4 text-lg">
-                <a href="#hero" class="text-white hover:bg-indigo-700 p-2 rounded block">الرئيسية</a>
-                <a href="#about" class="text-white hover:bg-indigo-700 p-2 rounded block">نبذة عني</a>
-                <a href="#systems_focus" class="text-white hover:bg-indigo-700 p-2 rounded block">مجال التخصص</a>
-                <a href="#solutions" class="text-white hover:bg-indigo-700 p-2 rounded block">الخدمات</a>
-                <a href="#portfolio" class="text-white hover:bg-indigo-700 p-2 rounded block">المشاريع</a>
-                <a href="#experience" class="text-white hover:bg-indigo-700 p-2 rounded block">الخبرة</a>
-                <a href="#contact" class="text-white hover:bg-indigo-700 p-2 rounded block">تواصل</a>
+                <a href="#hero" class="text-white hover:bg-indigo-700 p-2 rounded block">Home</a>
+                <a href="#about" class="text-white hover:bg-indigo-700 p-2 rounded block">About Me</a>
+                <a href="#systems_focus" class="text-white hover:bg-indigo-700 p-2 rounded block">Specialization</a>
+                <a href="#solutions" class="text-white hover:bg-indigo-700 p-2 rounded block">Services</a>
+                <a href="#portfolio" class="text-white hover:bg-indigo-700 p-2 rounded block">Portfolio</a>
+                <a href="#experience" class="text-white hover:bg-indigo-700 p-2 rounded block">Experience</a>
+                <a href="#contact" class="text-white hover:bg-indigo-700 p-2 rounded block">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero Section) -->
     <section id="hero" class="py-20 lg:py-32 text-center bg-white shadow-xl">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto flex flex-col items-center">
-                <!-- الصورة الشخصية المضافة -->
                 <div class="mb-6">
-                    <img src="https://placehold.co/150x150/1e3a8a/ffffff?text=MA" alt="الصورة الشخصية" class="rounded-full ring-4 ring-primary-blue shadow-2xl w-36 h-36 object-cover">
+                    <img src="https://placehold.co/150x150/1e3a8a/ffffff?text=MA" alt="Personal Picture" class="rounded-full ring-4 ring-primary-blue shadow-2xl w-36 h-36 object-cover">
                 </div>
                 
-                <h3 class="text-xl sm:text-2xl font-medium text-gray-500 mb-2">أهلاً بك، أنا</h3>
+                <h3 class="text-xl sm:text-2xl font-medium text-gray-500 mb-2">Hello, I'm</h3>
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-blue mb-4 leading-tight">
-                    محمد أحمد
+                    Mohamed Ahmed
                 </h1>
-                <!-- تم التركيز على مهندس برمجيات بشكل عام -->
                 <h2 class="text-2xl sm:text-3xl font-semibold text-yellow-600 mb-8">
-                    مهندس برمجيات (Software Engineer) | متخصص في بناء الأنظمة القابلة للتوسع
+                    Software Engineer | Specialized in Building Scalable Systems
                 </h2>
                 
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition duration-300 shadow-lg-custom">
-                        <i data-lucide="send" class="w-5 h-5 ml-2"></i>
-                        تواصل معي الآن
+                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                        Contact Me Now
                     </a>
                     <button onclick="viewPDF()" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-blue text-base font-medium rounded-full text-primary-blue bg-white hover:bg-primary-blue hover:text-white transition duration-300 shadow-lg-custom">
-                        <i data-lucide="file-text" class="w-5 h-5 ml-2"></i>
-                        طلب السيرة الذاتية (CV)
+                        <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                        Request CV
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم تخصص الأنظمة (Updated Focus Section) -->
     <section id="systems_focus" class="py-16 lg:py-24 bg-secondary-gray border-t border-gray-300">
         <div class="container mx-auto px-4">
-            <!-- تم تغيير العنوان ليصبح "مجال التخصص" ويشمل جميع الأنظمة التي تعمل عليها -->
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-10">مجال التخصص: الأنظمة المؤسسية والتطبيقات المعقدة</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-10">Specialization: Enterprise Systems and Complex Applications</h2>
             <p class="text-xl text-center text-gray-700 max-w-4xl mx-auto mb-12">
-                كـ   مهندس برمجيات  ، أركز على بناء وتطوير أنظمة متكاملة وموثوقة. خبرتي تشمل جميع أنواع المشاريع، من   ERP و CRM   إلى   تطبيقات الموبايل المتقدمة   ومنصات   التجارة الإلكترونية   وأي نظام معقد يتطلب هندسة برمجية قوية.
+                As a **Software Engineer**, I focus on building and developing integrated and reliable systems. My expertise covers all project types, from **ERP** and **CRM** to **advanced mobile applications** and **E-Commerce** platforms, and any complex system requiring robust software engineering.
             </p>
 
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">أهم أنواع الأنظمة التي أطورها:</h3>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Key Types of Systems I Develop:</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 
-                <!-- موديل 1: أنظمة تخطيط موارد المؤسسات (ERP) -->
                 <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-500">
                     <i data-lucide="building-2" class="w-6 h-6 text-teal-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">أنظمة ERP المتكاملة</h4>
-                    <p class="text-sm text-gray-600">هندسة أنظمة إدارة الحسابات، المخزون، والموارد البشرية للشركات الكبيرة.</p>
+                    <h4 class="text-lg font-bold text-gray-900">Integrated ERP Systems</h4>
+                    <p class="text-sm text-gray-600">Engineering systems for managing accounts, inventory, and human resources for large companies.</p>
                 </div>
 
-                <!-- موديل 2: أنظمة إدارة علاقات العملاء (CRM) -->
                 <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-yellow-500">
                     <i data-lucide="handshake" class="w-6 h-6 text-yellow-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">حلول CRM وإدارة المبيعات</h4>
-                    <p class="text-sm text-gray-600">بناء أنظمة لتتبع العملاء، المبيعات، والدعم الفني بكفاءة عالية.</p>
+                    <h4 class="text-lg font-bold text-gray-900">CRM & Sales Management Solutions</h4>
+                    <p class="text-sm text-gray-600">Building systems for tracking customers, sales, and technical support with high efficiency.</p>
                 </div>
 
-                <!-- موديل 3: تطبيقات الموبايل (Backend) -->
                 <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-red-500">
                     <i data-lucide="smartphone" class="w-6 h-6 text-red-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">بنية تطبيقات الموبايل</h4>
-                    <p class="text-sm text-gray-600">تطوير APIs سريعة وآمنة تدعم تطبيقات iOS و Android.</p>
+                    <h4 class="text-lg font-bold text-gray-900">Mobile Application Architecture</h4>
+                    <p class="text-sm text-gray-600">Developing fast and secure APIs to support iOS and Android applications.</p>
                 </div>
 
-                <!-- موديل 4: منصات التجارة الإلكترونية -->
                 <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-indigo-500">
                     <i data-lucide="shopping-cart" class="w-6 h-6 text-indigo-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">منصات التجارة الإلكترونية (E-Commerce)</h4>
-                    <p class="text-sm text-gray-600">إنشاء متاجر إلكترونية قابلة للتوسع مع أنظمة دفع وشحن متكاملة.</p>
+                    <h4 class="text-lg font-bold text-gray-900">E-Commerce Platforms</h4>
+                    <p class="text-sm text-gray-600">Creating scalable online stores with integrated payment and shipping systems.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- قسم نبذة عني (About Me) -->
     <section id="about" class="py-16 lg:py-24 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap lg:flex-nowrap items-center justify-between">
-                <!-- صورة وهمية -->
-                <div class="w-full lg:w-5/12 mb-8 lg:mb-0 lg:ml-12">
-                    <img src="erp.png" alt="صورة محمد أحمد" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                <div class="w-full lg:w-5/12 mb-8 lg:mb-0 lg:mr-12">
+                    <img src="erp.png" alt="Mohamed Ahmed Picture" class="rounded-xl shadow-2xl w-full h-auto object-cover">
                 </div>
                 
-                <!-- المحتوى -->
                 <div class="w-full lg:w-7/12">
-                    <h2 class="text-4xl font-bold text-primary-blue mb-6">دعني أقدم نفسي كمهندس برمجيات</h2>
+                    <h2 class="text-4xl font-bold text-primary-blue mb-6">Allow Me to Introduce Myself as a Software Engineer</h2>
                     <p class="text-xl text-gray-700 mb-6 leading-relaxed">
-
-أنا محمد أحمد، مهندس برمجيات (Software Engineer) متخصص في تصميم وتطوير الأنظمة المعقدة والقابلة للتوسع. خريج كلية الحاسبات والذكاء الاصطناعي – جامعة حلوان.                   
+                        I am Mohamed Ahmed, a **Software Engineer** specializing in designing and developing complex and scalable systems. I am a graduate of the Faculty of Computers and Artificial Intelligence – Helwan University.
 					</p>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-أعمل على بناء بنية برمجية قوية ومنظمة لمشروعك، لضمان أن النظام يكون سريع، آمن، وقابل للنمو مع توسّع أعمالك. أستخدم أفضل الأدوات والممارسات العالمية لتقديم حلول برمجية مستقرة واحترافية تشمل أنظمة ERP, CRM, E-Commerce، وتطبيقات الموبايل.                    </p>
+                        I focus on building a robust and organized software architecture for your project, ensuring the system is fast, secure, and ready to grow as your business expands. I utilize the best global tools and practices to deliver stable and professional software solutions, including ERP, CRM, E-Commerce systems, and Mobile Applications.
+                    </p>
                     <div class="mt-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-4">ما أستطيع تقديمه لمشروعك: (موجّه للعميل)</h4>
-                        <!-- تم استبدال المصطلحات التقنية بقيمة العمل -->
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">What I can offer to your project: (Client-Focused)</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">بناء أنظمة متكاملة ومستقرة</span>
-                            <span class="skill-tag">تصميم قواعد بيانات سريعة للبيانات الضخمة</span>
-                            <span class="skill-tag">ضمان قابلية التوسع والأداء العالي</span>
-                            <span class="skill-tag">تطوير واجهات الإدارة الاحترافية (APIs)</span>
-                            <span class="skill-tag">حلول التجارة الإلكترونية والموبايل</span>
+                            <span class="skill-tag">Building Stable, Integrated Systems</span>
+                            <span class="skill-tag">Designing Fast Databases for Big Data</span>
+                            <span class="skill-tag">Ensuring Scalability and High Performance</span>
+                            <span class="skill-tag">Developing Professional Admin Interfaces (APIs)</span>
+                            <span class="skill-tag">E-Commerce and Mobile Solutions</span>
                         </div>
                     </div>
                 </div>
@@ -208,162 +188,138 @@
         </div>
     </section>
 
-    <!-- قسم الخدمات (Services Section) - مختصر -->
     <section id="solutions" class="py-16 lg:py-24 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">الخدمات التي أقدمها في هندسة البرمجيات</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">Software Engineering Services I Offer</h2>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 
-                <!-- بطاقة 1: Backend Development -->
                 <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
                     <div class="flex justify-center mb-4"> <i data-lucide="server" class="w-8 h-8 text-red-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">بناء الأنظمة المخصصة</h3>
-                    <p class="text-gray-600 text-center text-sm">تصميم وتطبيق الأنظمة الخلفية (Backend) القوية لأي نوع من المشاريع.</p>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Custom System Development</h3>
+                    <p class="text-gray-600 text-center text-sm">Designing and implementing robust backend systems for any type of project.</p>
                 </div>
 
-                <!-- بطاقة 2: Web Applications -->
                 <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
                     <div class="flex justify-center mb-4"> <i data-lucide="layout-grid" class="w-8 h-8 text-yellow-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">هندسة قواعد البيانات</h3>
-                    <p class="text-gray-600 text-center text-sm">بناء هياكل قواعد بيانات فعالة وموثوقة وقابلة للتوسع.</p>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Database Engineering</h3>
+                    <p class="text-gray-600 text-center text-sm">Building efficient, reliable, and scalable database structures.</p>
                 </div>
                 
-                <!-- بطاقة 3: Mobile Integration -->
                 <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
                     <div class="flex justify-center mb-4"> <i data-lucide="zap" class="w-8 h-8 text-green-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">تطوير APIs سريعة</h3>
-                    <p class="text-gray-600 text-center text-sm">إنشاء واجهات برمجية (APIs) تدعم تطبيقات الويب والموبايل بفعالية.</p>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Fast API Development</h3>
+                    <p class="text-gray-600 text-center text-sm">Creating Programming Interfaces (APIs) that efficiently support web and mobile applications.</p>
                 </div>
                 
-                <!-- بطاقة 4: Admin Dashboards -->
                 <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
                     <div class="flex justify-center mb-4"> <i data-lucide="settings" class="w-8 h-8 text-blue-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">أنظمة الإدارة ولوحات التحكم</h3>
-                    <p class="text-gray-600 text-center text-sm">تطوير لوحات تحكم مخصصة لإدارة العمليات والبيانات بسهولة.</p>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Admin Systems and Control Panels</h3>
+                    <p class="text-gray-600 text-center text-sm">Developing custom control panels for easy management of operations and data.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم أعمالنا (Portfolio) - تم تحديث مسارات الصور -->
     <section id="portfolio" class="py-16 lg:py-24 bg-secondary-gray">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">أبرز مشاريعي الأخيرة</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">My Latest Projects</h2>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- مشروع 1: Yes Sir - Find a Nearby Craftsman -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/yessir.png" alt="مشروع تطبيق Yes Sir" class="portfolio-img">
+                    <img src="img/portfolio/yessir.png" alt="Yes Sir App Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Yes Sir - Find a Nearby Craftsman</h3>
-                        <p class="text-gray-700 text-sm mb-2">نظام كامل: تطبيق موبايل + لوحة تحكم إدارية</p>
+                        <p class="text-gray-700 text-sm mb-2">Complete System: Mobile App + Admin Control Panel</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- مشروع 2: Dubisale Buy or Pay anything -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/dubisale.jpg" alt="مشروع تطبيق Dubisale" class="portfolio-img">
+                    <img src="img/portfolio/dubisale.jpg" alt="Dubisale App Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Dubisale Buy or Pay anything</h3>
-                        <p class="text-gray-700 text-sm mb-2">نظام كامل: تطبيق موبايل + لوحة تحكم إدارية</p>
+                        <p class="text-gray-700 text-sm mb-2">Complete System: Mobile App + Admin Control Panel</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- مشروع 3: Privilege Education App -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/education.jpg" alt="مشروع تطبيق Privilege" class="portfolio-img">
+                    <img src="img/portfolio/education.jpg" alt="Privilege App Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Privilege Education App</h3>
-                        <p class="text-gray-700 text-sm mb-2">نظام تعليمي: تطبيق موبايل + لوحة تحكم</p>
+                        <p class="text-gray-700 text-sm mb-2">Educational System: Mobile App + Control Panel</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Education System</span> <span class="skill-tag">Mobile</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- مشروع 4: Online Store -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/store.jpg" alt="مشروع متجر إلكتروني" class="portfolio-img">
+                    <img src="img/portfolio/store.jpg" alt="Online Store Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Online Store</h3>
-                        <p class="text-gray-700 text-sm mb-2">منصة تجارة إلكترونية متكاملة</p>
+                        <p class="text-gray-700 text-sm mb-2">Integrated E-Commerce Platform</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">E-Commerce</span>
                         </div>
                     </div>
                 </div>              
     
-                <!-- مشروع 5: Tender Website -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/tender.png" alt="مشروع موقع Tender" class="portfolio-img">
+                    <img src="img/portfolio/tender.png" alt="Tender Website Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Tender Website</h3>
-                        <p class="text-gray-700 text-sm mb-2">منصة مناقصات: موقع إلكتروني + إدارة</p>
+                        <p class="text-gray-700 text-sm mb-2">Tendering Platform: Website + Administration</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Custom System</span> <span class="skill-tag">Admin</span>
                         </div>
                     </div>
                 </div>
     
-                <!-- مشروع 6: Dalily Map -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/dalily_map.png" alt="مشروع تطبيق دليلي ماب" class="portfolio-img">
+                    <img src="img/portfolio/dalily_map.png" alt="Dalily Map App Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Dalily Map</h3>
-                        <p class="text-gray-700 text-sm mb-2">تطبيق خرائط ودلائل: موبايل + نظام إدارة</p>
+                        <p class="text-gray-700 text-sm mb-2">Maps and Directory App: Mobile + Admin System</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
                         </div>
                     </div>
                 </div>
     
-                <!-- مشروع 7: Can Do Medical Company -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/can_do.png" alt="مشروع Can Do Medical" class="portfolio-img">
+                    <img src="img/portfolio/can_do.png" alt="Can Do Medical Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Can Do Medical Company</h3>
-                        <p class="text-gray-700 text-sm mb-2">موقع تعريفي وعرض أعمال لشركة طبية</p>
+                        <p class="text-gray-700 text-sm mb-2">Informational and Portfolio Website for a Medical Company</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Website</span>
                         </div>
                     </div>
                 </div>
     
-                <!-- مشروع 8: Onco Help Medical Company -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/onco.png" alt="مشروع Onco Help Medical" class="portfolio-img">
+                    <img src="img/portfolio/onco.png" alt="Onco Help Medical Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Onco Help Medical Company</h3>
-                        <p class="text-gray-700 text-sm mb-2">موقع تعريفي وعرض أعمال لشركة طبية</p>
+                        <p class="text-gray-700 text-sm mb-2">Informational and Portfolio Website for a Medical Company</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Website</span>
                         </div>
                     </div>
                 </div>
     
-                <!-- مشروع 9: Cancer Medical -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <!-- الصورة الفعلية للمشروع -->
-                    <img src="img/portfolio/cancer.png" alt="مشروع Cancer Medical" class="portfolio-img">
+                    <img src="img/portfolio/cancer.png" alt="Cancer Medical Project" class="portfolio-img">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-gray-900 mb-1">Cancer Medical</h3>
-                        <p class="text-gray-700 text-sm mb-2">موقع معلومات طبي</p>
+                        <p class="text-gray-700 text-sm mb-2">Medical Information Website</p>
                         <div class="flex flex-wrap gap-1 text-xs">
                             <span class="skill-tag">Website</span>
                         </div>
@@ -373,43 +329,39 @@
         </div>
     </section>
 
-    <!-- قسم الخبرة المهنية (Professional Experience) -->
     <section id="experience" class="py-16 lg:py-24 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">مسيرتي المهنية</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">My Professional Career</h2>
             
             <div class="max-w-4xl mx-auto space-y-8">
                 
-                <!-- الخبرة 1: Fabrica CS -->
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-red-600">
-                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات (Software Engineer)</h4>
-                    <h5 class="text-md font-semibold text-red-600 mb-2">Fabrica CS | القاهرة</h5>
-                    <p class="text-sm text-gray-500 mb-3">  المدة:   أكتوبر 2024 – حتى الآن</p>
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-red-600">
+                    <h4 class="text-xl font-bold text-gray-900">Software Engineer</h4>
+                    <h5 class="text-md font-semibold text-red-600 mb-2">Fabrica CS | Cairo</h5>
+                    <p class="text-sm text-gray-500 mb-3">Duration: October 2024 – Present</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>هندسة وتطوير   أنظمة CRM مخصصة   لشركات التطوير العقاري.</li>
-                        <li>التركيز على بناء حلول قابلة للتوسع لضمان الكفاءة التشغيلية العالية.</li>
+                        <li>Engineering and developing **custom CRM systems** for real estate development companies.</li>
+                        <li>Focusing on building scalable solutions to ensure high operational efficiency.</li>
                     </ul>
                 </div>
 
-                <!-- الخبرة 2: InTimeDev -->
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-blue-600">
-                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات (Software Engineer)</h4>
-                    <h5 class="text-md font-semibold text-blue-600 mb-2">InTimeDev | القاهرة</h5>
-                    <p class="text-sm text-gray-500 mb-3">  المدة:   يونيو 2022 – مايو 2023</p>
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-blue-600">
+                    <h4 class="text-xl font-bold text-gray-900">Software Engineer</h4>
+                    <h5 class="text-md font-semibold text-blue-600 mb-2">InTimeDev | Cairo</h5>
+                    <p class="text-sm text-gray-500 mb-3">Duration: June 2022 – May 2023</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>تطوير وهندسة الواجهات الخلفية (Backend) لمشاريع الويب.</li>
-                        <li>ساهمت في مشاريع ويب متنوعة مع التركيز على جودة النظام وأدائه.</li>
+                        <li>Developing and engineering backend interfaces for web projects.</li>
+                        <li>Contributed to various web projects with a focus on system quality and performance.</li>
                     </ul>
                 </div>
 
-                <!-- الخبرة 3: Atw.ltd -->
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-r-4 border-green-600">
-                    <h4 class="text-xl font-bold text-gray-900">مهندس برمجيات مبتدئ (Junior Software Engineer)</h4>
-                    <h5 class="text-md font-semibold text-green-600 mb-2">Atw.ltd | الجيزة</h5>
-                    <p class="text-sm text-gray-500 mb-3">  المدة:   يوليو 2021 – يونيو 2022</p>
+                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-green-600">
+                    <h4 class="text-xl font-bold text-gray-900">Junior Software Engineer</h4>
+                    <h5 class="text-md font-semibold text-green-600 mb-2">Atw.ltd | Giza</h5>
+                    <p class="text-sm text-gray-500 mb-3">Duration: July 2021 – June 2022</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>ساهمت في إنشاء   نظام ERP   متكامل ونظام للتدريس والامتحانات.</li>
-                        <li>تطوير وصيانة المكونات الأساسية لضمان استقرار النظام وسرعة استجابته.</li>
+                        <li>Contributed to the creation of an **integrated ERP system** and a teaching and examination system.</li>
+                        <li>Developing and maintaining core components to ensure system stability and responsiveness.</li>
                     </ul>
                 </div>
                 
@@ -417,36 +369,34 @@
         </div>
     </section>
 
-    <!-- قسم التواصل (Contact Section) -->
     <section id="contact" class="py-16 lg:py-24 bg-primary-blue text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">هل تبحث عن مهندس برمجيات لتنفيذ فكرتك؟</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Looking for a Software Engineer to execute your idea?</h2>
             <p class="text-lg mb-8 max-w-2xl mx-auto">
-                دعنا نتحدث حول كيفية هندسة نظام متكامل وقابل للتوسع يلبي احتياجات مشروعك في أي مجال: ERP، CRM، التجارة الإلكترونية، أو تطبيقات الموبايل.
+                Let's discuss how to engineer an integrated and scalable system that meets your project's needs in any domain: ERP, CRM, E-Commerce, or Mobile Applications.
             </p>
             <a href="mailto:mohamed.ahmed@example.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-primary-blue bg-white hover:bg-gray-200 md:py-4 md:text-lg md:px-10 transition duration-300 shadow-lg-custom">
-                <i data-lucide="mail" class="w-5 h-5 ml-2"></i>
-                تواصل عبر البريد الإلكتروني
+                <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                Contact via Email
             </a>
         </div>
     </section>
 
-    <!-- تذييل الصفحة (Footer) -->
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 space-x-reverse mb-3">
+            <div class="flex justify-center space-x-6 mb-3">
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
             </div>
             <p class="text-sm text-gray-500">
-                &copy; <span id="year"></span> محمد أحمد. جميع الحقوق محفوظة.
+                &copy; <span id="year"></span> Mohamed Ahmed. All rights reserved.
             </p>
         </div>
     </footer>
     
     <script>
-        // JavaScript لتشغيل قائمة الجوال وتحديث السنة في الفوتر
+        // JavaScript to toggle mobile menu and update footer year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         const menuButton = document.getElementById('menu-button');
@@ -456,7 +406,7 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // إغلاق القائمة عند النقر على رابط (في الجوال)
+        // Close menu on link click (mobile)
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
