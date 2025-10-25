@@ -1,56 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ahmed | Specialized Software Engineer</title>
+    <title>Mohamed Ahmed | Software System Architect & Freelancer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom basic styling */
+        /* BASE STYLES for Dark Mode (Default) */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
+            background-color: #0d1117; 
+            color: #c9d1d9; 
+            transition: background-color 0.3s, color 0.3s;
         }
-        .header-bg {
-            background-color: #1e3a8a; /* Dark Blue */
-        }
-        .text-primary-blue {
-            color: #1e3a8a;
-        }
-        .bg-primary-blue {
-            background-color: #1e3a8a;
-        }
-        .shadow-lg-custom {
-            box-shadow: 0 0 30px rgba(30, 58, 138, 0.15); /* More defined shadow */
-        }
+        .header-bg { background-color: #161b22; }
+        .text-accent-blue { color: #58a6ff; }
+        .bg-accent-blue { background-color: #58a6ff; }
+        .bg-section { background-color: #161b22; }
+        .shadow-tech { box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2); }
         .skill-tag {
-            /* Slightly changed colors for added value distinction */
-            background-color: #fffbeb; /* Light Yellow/Cream */
-            color: #d97706; /* Dark Orange/Yellow */
-            padding: 4px 12px;
+            background-color: #21262d;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 5px 15px;
             border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600; /* Heavier for prominence */
-            margin-bottom: 8px;
-            display: inline-block;
-            border: 1px solid #fcd34d;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
-        /* To define project image size and ensure consistency */
+
+        /* LIGHT MODE OVERRIDES */
+        .light body { background-color: #ffffff; color: #1f2937; }
+        .light .header-bg { background-color: #4f46e5; }
+        .light .text-accent-blue, .light .bg-accent-blue { color: #4f46e5; background-color: #4f46e5; }
+        .light .bg-section { background-color: #f3f4f6; }
+        .light .skill-tag { background-color: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+        .light .project-card { background-color: #ffffff; border-color: #e5e7eb; }
+        .light .hero-pattern { background-image: radial-gradient(#d1d5db 1px, transparent 1px); }
+        .light .typing-text { border-right: .15em solid #4f46e5; }
+
+        /* Animations */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        .typing-text {
+            overflow: hidden; 
+            border-right: .15em solid #58a6ff; 
+            white-space: nowrap; 
+            margin: 0 auto; 
+            letter-spacing: .05em; 
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color, #58a6ff); } /* Dynamic accent color */
+        }
+        .hero-pattern {
+            background-image: radial-gradient(#30363d 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+        }
         .portfolio-img {
             width: 100%;
-            height: 420px; /* Fixed height for all images */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .project-card:hover .portfolio-img {
+            transform: scale(1.05); 
         }
     </style>
     <script>
-        // Tailwind Configuration
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#1e3a8a',
-                        'secondary-gray': '#e5e7eb',
+                        'accent-blue': '#58a6ff',
+                        'dark-bg': '#0d1117',
+                        'section-bg': '#161b22',
+                        'light-primary': '#4f46e5',
                     }
                 }
             }
@@ -58,345 +90,374 @@
     </script>
 </head>
 <body onload="lucide.createIcons()">
-    <header class="header-bg sticky top-0 z-50 shadow-md">
+
+    <header class="header-bg sticky top-0 z-50 shadow-lg border-b dark:border-gray-700 light:border-indigo-400">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white tracking-widest">
-                Mohamed Ahmed | Software Engineer
+            <a href="#" class="text-2xl font-extrabold text-white tracking-wider">
+                Mohamed Ahmed | Backend Architect
             </a>
             
             <nav class="hidden md:flex space-x-8 text-lg">
-                <a href="#hero" class="text-white hover:text-indigo-200 transition duration-300">Home</a>
-                <a href="#about" class="text-white hover:text-indigo-200 transition duration-300">About Me</a>
-                <a href="#systems_focus" class="text-white hover:text-indigo-200 transition duration-300">Specialization</a>
-                <a href="#solutions" class="text-white hover:text-indigo-200 transition duration-300">Services</a>
-                <a href="#portfolio" class="text-white hover:text-indigo-200 transition duration-300">Portfolio</a>
-                <a href="#experience" class="text-white hover:text-indigo-200 transition duration-300">Experience</a>
-                <a href="#contact" class="text-white hover:text-indigo-200 transition duration-300">Contact</a>
+                <a href="#hero" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">Home</a>
+                <a href="#about" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">About</a>
+                <a href="#skills" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">Skills</a>
+                <a href="#portfolio" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">Portfolio</a>
+                <a href="#experience" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">Experience</a>
+                <a href="#contact" class="text-white hover:text-accent-blue light:hover:text-indigo-200 transition duration-300">Contact</a>
             </nav>
             
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
+            <div class="flex items-center space-x-4">
+                <button id="mode-toggle" class="p-2 rounded-full hover:bg-gray-700 light:hover:bg-indigo-700 transition duration-300 text-white focus:outline-none">
+                    <i data-lucide="sun" id="sun-icon" class="w-6 h-6"></i>
+                    <i data-lucide="moon" id="moon-icon" class="w-6 h-6 hidden"></i>
+                </button>
+                <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
         </div>
         
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-primary-blue shadow-lg">
-            <nav class="flex flex-col space-y-2 p-4 text-lg">
-                <a href="#hero" class="text-white hover:bg-indigo-700 p-2 rounded block">Home</a>
-                <a href="#about" class="text-white hover:bg-indigo-700 p-2 rounded block">About Me</a>
-                <a href="#systems_focus" class="text-white hover:bg-indigo-700 p-2 rounded block">Specialization</a>
-                <a href="#solutions" class="text-white hover:bg-indigo-700 p-2 rounded block">Services</a>
-                <a href="#portfolio" class="text-white hover:bg-indigo-700 p-2 rounded block">Portfolio</a>
-                <a href="#experience" class="text-white hover:bg-indigo-700 p-2 rounded block">Experience</a>
-                <a href="#contact" class="text-white hover:bg-indigo-700 p-2 rounded block">Contact</a>
-            </nav>
-        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-section dark:bg-section light:bg-light-primary shadow-lg">
+            </div>
     </header>
 
-    <section id="hero" class="py-20 lg:py-32 text-center bg-white shadow-xl">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto flex flex-col items-center">
-                <div class="mb-6">
-                    <img src="https://placehold.co/150x150/1e3a8a/ffffff?text=MA" alt="Personal Picture" class="rounded-full ring-4 ring-primary-blue shadow-2xl w-36 h-36 object-cover">
-                </div>
-                
-                <h3 class="text-xl sm:text-2xl font-medium text-gray-500 mb-2">Hello, I'm</h3>
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-blue mb-4 leading-tight">
-                    Mohamed Ahmed
-                </h1>
-                <h2 class="text-2xl sm:text-3xl font-semibold text-yellow-600 mb-8">
-                    Software Engineer | Specialized in Building Scalable Systems
-                </h2>
-                
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition duration-300 shadow-lg-custom">
-                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                        Contact Me Now
-                    </a>
-                    <button onclick="viewPDF()" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-blue text-base font-medium rounded-full text-primary-blue bg-white hover:bg-primary-blue hover:text-white transition duration-300 shadow-lg-custom">
-                        <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-                        Request CV
-                    </button>
-                </div>
+    <section id="hero" class="py-24 lg:py-40 text-center relative overflow-hidden bg-dark-bg light:bg-white">
+        <div class="hero-pattern absolute inset-0"></div>
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            
+            <div class="mb-8 flex justify-center">
+                <img src="https://placehold.co/180x180/58a6ff/0d1117?text=MA" alt="Mohamed Ahmed" class="rounded-full ring-4 ring-accent-blue shadow-tech w-44 h-44 object-cover animate-pulse-slow">
             </div>
-        </div>
-    </section>
 
-    <section id="systems_focus" class="py-16 lg:py-24 bg-secondary-gray border-t border-gray-300">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-10">Specialization: Enterprise Systems and Complex Applications</h2>
-            <p class="text-xl text-center text-gray-700 max-w-4xl mx-auto mb-12">
-                As a **Software Engineer**, I focus on building and developing integrated and reliable systems. My expertise covers all project types, from **ERP** and **CRM** to **advanced mobile applications** and **E-Commerce** platforms, and any complex system requiring robust software engineering.
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white dark:text-white light:text-gray-900 mb-4 leading-tight">
+                Mohamed Ahmed Ayad
+            </h1>
+
+            <h2 class="text-2xl sm:text-3xl font-semibold text-accent-blue mb-10 w-fit mx-auto typing-text">
+                Backend Software Engineer | Laravel & Scalable APIs Specialist
+            </h2>
+
+            <p class="text-xl text-gray-400 dark:text-gray-400 light:text-gray-700 max-w-4xl mx-auto mb-12">
+                A software engineer focused on robust **Backend development**. Experienced in engineering professional systems, database management, complex API integration, and proficient in **PHP/Laravel** and **Vue.js**.
             </p>
-
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Key Types of Systems I Develop:</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                
-                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-500">
-                    <i data-lucide="building-2" class="w-6 h-6 text-teal-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">Integrated ERP Systems</h4>
-                    <p class="text-sm text-gray-600">Engineering systems for managing accounts, inventory, and human resources for large companies.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-yellow-500">
-                    <i data-lucide="handshake" class="w-6 h-6 text-yellow-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">CRM & Sales Management Solutions</h4>
-                    <p class="text-sm text-gray-600">Building systems for tracking customers, sales, and technical support with high efficiency.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-red-500">
-                    <i data-lucide="smartphone" class="w-6 h-6 text-red-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">Mobile Application Architecture</h4>
-                    <p class="text-sm text-gray-600">Developing fast and secure APIs to support iOS and Android applications.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl shadow-md border-b-4 border-indigo-500">
-                    <i data-lucide="shopping-cart" class="w-6 h-6 text-indigo-600 mb-2"></i>
-                    <h4 class="text-lg font-bold text-gray-900">E-Commerce Platforms</h4>
-                    <p class="text-sm text-gray-600">Creating scalable online stores with integrated payment and shipping systems.</p>
-                </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-semibold rounded-lg text-dark-bg bg-accent-blue hover:bg-blue-400 transition duration-300 shadow-tech">
+                    <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                    Start Your Project Now
+                </a>
+                <button onclick="viewPDF()" class="inline-flex items-center justify-center px-10 py-4 border-2 border-accent-blue text-lg font-semibold rounded-lg text-accent-blue dark:hover:bg-accent-blue dark:hover:text-dark-bg light:hover:bg-light-primary light:hover:text-white transition duration-300">
+                    <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                    Request CV
+                </button>
             </div>
         </div>
     </section>
-    
-    <section id="about" class="py-16 lg:py-24 bg-white border-t border-gray-200">
-        <div class="container mx-auto px-4">
+
+    <section id="about" class="py-20 lg:py-32 bg-dark-bg dark:bg-dark-bg light:bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
             <div class="flex flex-wrap lg:flex-nowrap items-center justify-between">
-                <div class="w-full lg:w-5/12 mb-8 lg:mb-0 lg:mr-12">
-                    <img src="erp.png" alt="Mohamed Ahmed Picture" class="rounded-xl shadow-2xl w-full h-auto object-cover">
-                </div>
                 
-                <div class="w-full lg:w-7/12">
-                    <h2 class="text-4xl font-bold text-primary-blue mb-6">Allow Me to Introduce Myself as a Software Engineer</h2>
-                    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
-                        I am Mohamed Ahmed, a **Software Engineer** specializing in designing and developing complex and scalable systems. I am a graduate of the Faculty of Computers and Artificial Intelligence – Helwan University.
-					</p>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        I focus on building a robust and organized software architecture for your project, ensuring the system is fast, secure, and ready to grow as your business expands. I utilize the best global tools and practices to deliver stable and professional software solutions, including ERP, CRM, E-Commerce systems, and Mobile Applications.
+                <div class="w-full lg:w-7/12 lg:pr-16 mb-10 lg:mb-0">
+                    <h2 class="text-4xl font-extrabold dark:text-white light:text-gray-900 mb-6 border-l-4 border-accent-blue pl-4">A Brief Overview</h2>
+                    <p class="text-xl dark:text-gray-300 light:text-gray-700 leading-relaxed mb-6">
+                        I am Mohamed Ahmed Ayad, a **Software Engineer** specializing in designing and developing highly scalable and reliable backend systems, particularly using **PHP and Laravel**.
+                    </p>
+                    <p class="text-lg dark:text-gray-400 light:text-gray-600 leading-relaxed mb-8">
+                        My expertise lies in building robust software architecture for complex projects like **ERP, CRM, and E-Commerce** platforms. I prioritize database optimization, problem-solving, and clean, efficient code that stands the test of time and growth.
                     </p>
                     <div class="mt-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-4">What I can offer to your project: (Client-Focused)</h4>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">Building Stable, Integrated Systems</span>
-                            <span class="skill-tag">Designing Fast Databases for Big Data</span>
-                            <span class="skill-tag">Ensuring Scalability and High Performance</span>
-                            <span class="skill-tag">Developing Professional Admin Interfaces (APIs)</span>
-                            <span class="skill-tag">E-Commerce and Mobile Solutions</span>
-                        </div>
+                        <h4 class="text-xl font-semibold dark:text-white light:text-gray-800 mb-4">Education & Background:</h4>
+                        <p class="dark:text-gray-400 light:text-gray-600">
+                            **Bachelor's degree in Computer Science** from **Helwan University**, Cairo. My graduation project involved an **AI-based system for object segmentation** and classification.
+                        </p>
                     </div>
                 </div>
+                
+                <div class="w-full lg:w-5/12">
+                    <img src="erp.png" alt="System Architecture Illustration" class="rounded-xl shadow-2xl w-full h-auto object-cover border dark:border-gray-700 light:border-gray-300">
+                </div>
+                
             </div>
         </div>
     </section>
 
-    <section id="solutions" class="py-16 lg:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">Software Engineering Services I Offer</h2>
+    <section id="skills" class="py-20 lg:py-32 bg-section dark:bg-section light:bg-f3f4f6 border-t dark:border-gray-800 light:border-gray-200">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-4xl font-extrabold dark:text-white light:text-gray-900 text-center mb-12 border-b-2 border-accent-blue pb-2 w-fit mx-auto">Technical Skills & Toolkit</h2>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
                 
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
-                    <div class="flex justify-center mb-4"> <i data-lucide="server" class="w-8 h-8 text-red-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Custom System Development</h3>
-                    <p class="text-gray-600 text-center text-sm">Designing and implementing robust backend systems for any type of project.</p>
+
+
+                <div class="p-2 rounded-xl border border-gray-700 dark:bg-dark-bg light:bg-white text-center hover:border-accent-blue transition duration-300 transform hover:scale-105">
+                    <i data-lucide="server-cog" class="w-8 h-8 text-red-500 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Custom System Development</h3>
+                    <p class="dark:text-gray-400 light:text-gray-600 text-sm">Design and implement robust Backend systems for unique projects (ERP, CRM).</p>
                 </div>
 
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
-                    <div class="flex justify-center mb-4"> <i data-lucide="layout-grid" class="w-8 h-8 text-yellow-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Database Engineering</h3>
-                    <p class="text-gray-600 text-center text-sm">Building efficient, reliable, and scalable database structures.</p>
+                <div class="p-2 rounded-xl border border-gray-700 dark:bg-dark-bg light:bg-white text-center hover:border-accent-blue transition duration-300 transform hover:scale-105">
+                    <i data-lucide="database" class="w-8 h-8 text-green-500 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Database Engineering</h3>
+                    <p class="dark:text-gray-400 light:text-gray-600 text-sm">Build scalable and efficient database architectures for big data handling.</p>
                 </div>
-                
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
-                    <div class="flex justify-center mb-4"> <i data-lucide="zap" class="w-8 h-8 text-green-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Fast API Development</h3>
-                    <p class="text-gray-600 text-center text-sm">Creating Programming Interfaces (APIs) that efficiently support web and mobile applications.</p>
+
+                <div class="p-2 rounded-xl border border-gray-700 dark:bg-dark-bg light:bg-white text-center hover:border-accent-blue transition duration-300 transform hover:scale-105">
+                    <i data-lucide="zap" class="w-8 h-8 text-yellow-500 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Fast API Development</h3>
+                    <p class="dark:text-gray-400 light:text-gray-600 text-sm">Create high-speed APIs to efficiently support web and mobile applications.</p>
                 </div>
-                
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom transition duration-300">
-                    <div class="flex justify-center mb-4"> <i data-lucide="settings" class="w-8 h-8 text-blue-600"></i> </div>
-                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Admin Systems and Control Panels</h3>
-                    <p class="text-gray-600 text-center text-sm">Developing custom control panels for easy management of operations and data.</p>
+
+                <div class="p-2 rounded-xl border border-gray-700 dark:bg-dark-bg light:bg-white text-center hover:border-accent-blue transition duration-300 transform hover:scale-105">
+                    <i data-lucide="settings" class="w-8 h-8 text-purple-500 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Admin Control Panels</h3>
+                    <p class="dark:text-gray-400 light:text-gray-600 text-sm">Developing custom admin interfaces for seamless management of operations and data.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-16 lg:py-24 bg-secondary-gray">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">My Latest Projects</h2>
+<section id="portfolio" class="py-20 lg:py-32 bg-dark-bg dark:bg-dark-bg light:bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-4xl font-extrabold dark:text-white light:text-gray-900 text-center mb-16 border-b-2 border-accent-blue pb-2 w-fit mx-auto">Latest Projects & Case Studies</h2>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/yessir.png" alt="Yes Sir App Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Yes Sir - Find a Nearby Craftsman</h3>
-                        <p class="text-gray-700 text-sm mb-2">Complete System: Mobile App + Admin Control Panel</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/yessir.png" alt="Yes Sir App Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Yes Sir - Service Marketplace</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Complete System: Mobile App + Admin Panel. Specialized in real-time geo-location and job tracking.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Mobile Backend</span> <span class="skill-tag">Admin System</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/dubisale.jpg" alt="Dubisale App Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dubisale Buy or Pay anything</h3>
-                        <p class="text-gray-700 text-sm mb-2">Complete System: Mobile App + Admin Control Panel</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/dubisale.jpg" alt="Dubisale App Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Dubisale - Buy or Pay Exchange</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Scalable classifieds and payment platform for high-volume transactions (E-Commerce).</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">E-Commerce</span> <span class="skill-tag">Mobile Backend</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/education.jpg" alt="Privilege App Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Privilege Education App</h3>
-                        <p class="text-gray-700 text-sm mb-2">Educational System: Mobile App + Control Panel</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Education System</span> <span class="skill-tag">Mobile</span>
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/education.jpg" alt="Privilege App Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Privilege Education Platform</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Integrated educational system: video streaming, examinations, and full content management.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Education System</span> <span class="skill-tag">Mobile Backend</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/store.jpg" alt="Online Store Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Online Store</h3>
-                        <p class="text-gray-700 text-sm mb-2">Integrated E-Commerce Platform</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">E-Commerce</span>
-                        </div>
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/store.jpg" alt="Online Store Project" class="portfolio-img">
                     </div>
-                </div>              
-    
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/tender.png" alt="Tender Website Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Tender Website</h3>
-                        <p class="text-gray-700 text-sm mb-2">Tendering Platform: Website + Administration</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Custom System</span> <span class="skill-tag">Admin</span>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Integrated E-Commerce Platform</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">A custom, scalable online store with robust inventory, payment, and multi-role systems.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">E-Commerce</span> <span class="skill-tag">Custom Backend</span>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/dalily_map.png" alt="Dalily Map App Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dalily Map</h3>
-                        <p class="text-gray-700 text-sm mb-2">Maps and Directory App: Mobile + Admin System</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Mobile</span> <span class="skill-tag">Admin System</span>
+
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/tender.png" alt="Tender Website Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Tender Management System</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">A centralized platform for managing tenders, bidding, and administration with subscription features.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Custom System</span> <span class="skill-tag">Admin Panel</span>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/can_do.png" alt="Can Do Medical Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Can Do Medical Company</h3>
-                        <p class="text-gray-700 text-sm mb-2">Informational and Portfolio Website for a Medical Company</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Website</span>
+
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/dalily_map.png" alt="Dalily Map App Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Dalily Map & Directory App</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Maps and business directory application with full administrative control and relevant data services.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Mobile Backend</span> <span class="skill-tag">Geo-Location</span>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/onco.png" alt="Onco Help Medical Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Onco Help Medical Company</h3>
-                        <p class="text-gray-700 text-sm mb-2">Informational and Portfolio Website for a Medical Company</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Website</span>
+
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/can_do.png" alt="Can Do Medical Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Can Do Medical Company Website</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Informational and portfolio website for a medical company, focusing on clean presentation.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Website</span> <span class="skill-tag">Portfolio</span>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="img/portfolio/cancer.png" alt="Cancer Medical Project" class="portfolio-img">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Cancer Medical</h3>
-                        <p class="text-gray-700 text-sm mb-2">Medical Information Website</p>
-                        <div class="flex flex-wrap gap-1 text-xs">
-                            <span class="skill-tag">Website</span>
+
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/onco.png" alt="Onco Help Medical Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Onco Help Medical Company Website</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Informational and services website for a specialized medical company.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Website</span> <span class="skill-tag">Informational</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-section project-card rounded-xl overflow-hidden border dark:border-gray-700 light:border-gray-200 hover:border-accent-blue shadow-tech dark:bg-section light:bg-f3f4f6">
+                    <div class="overflow-hidden">
+                        <img src="img/portfolio/cancer.png" alt="Cancer Medical Project" class="portfolio-img">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold dark:text-white light:text-gray-900 mb-2">Cancer Medical Information Website</h3>
+                        <p class="dark:text-gray-400 light:text-gray-700 text-sm mb-3">Medical information website providing resources and details on cancer treatment and research.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="skill-tag">Website</span> <span class="skill-tag">Medical Content</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                 <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-accent-blue text-base font-medium rounded-full text-accent-blue dark:hover:bg-accent-blue dark:hover:text-dark-bg light:hover:bg-light-primary light:hover:text-white transition duration-300">
+                    Discuss Your Project
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-16 lg:py-24 bg-white">
+    <section id="experience" class="py-16 lg:py-24 bg-section dark:bg-section light:bg-f3f4f6 border-t dark:border-gray-800 light:border-gray-200">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">My Professional Career</h2>
-            
+            <h2 class="text-3xl sm:text-4xl font-bold text-center dark:text-white light:text-gray-900 mb-12 border-b-2 border-accent-blue pb-2 w-fit mx-auto">Professional Career</h2>
             <div class="max-w-4xl mx-auto space-y-8">
                 
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-red-600">
-                    <h4 class="text-xl font-bold text-gray-900">Software Engineer</h4>
+                <div class="p-2 rounded-xl shadow-lg border-l-4 border-red-600 dark:bg-dark-bg light:bg-white">
+                    <h4 class="text-xl font-bold dark:text-white light:text-gray-900">PHP Developer</h4>
                     <h5 class="text-md font-semibold text-red-600 mb-2">Fabrica CS | Cairo</h5>
-                    <p class="text-sm text-gray-500 mb-3">Duration: October 2024 – Present</p>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>Engineering and developing **custom CRM systems** for real estate development companies.</li>
-                        <li>Focusing on building scalable solutions to ensure high operational efficiency.</li>
-                    </ul>
-                </div>
-
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-blue-600">
-                    <h4 class="text-xl font-bold text-gray-900">Software Engineer</h4>
-                    <h5 class="text-md font-semibold text-blue-600 mb-2">InTimeDev | Cairo</h5>
-                    <p class="text-sm text-gray-500 mb-3">Duration: June 2022 – May 2023</p>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>Developing and engineering backend interfaces for web projects.</li>
-                        <li>Contributed to various web projects with a focus on system quality and performance.</li>
-                    </ul>
-                </div>
-
-                <div class="bg-secondary-gray p-6 rounded-xl shadow-lg-custom border-l-4 border-green-600">
-                    <h4 class="text-xl font-bold text-gray-900">Junior Software Engineer</h4>
-                    <h5 class="text-md font-semibold text-green-600 mb-2">Atw.ltd | Giza</h5>
-                    <p class="text-sm text-gray-500 mb-3">Duration: July 2021 – June 2022</p>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700 text-base">
-                        <li>Contributed to the creation of an **integrated ERP system** and a teaching and examination system.</li>
-                        <li>Developing and maintaining core components to ensure system stability and responsiveness.</li>
+                    <p class="text-sm dark:text-gray-500 light:text-gray-600 mb-3">Duration: October 2024 – Present</p>
+                    <ul class="list-disc list-inside space-y-1 dark:text-gray-300 light:text-gray-700 text-base">
+                        <li>Developed multiple **CRM projects** using PHP and **Laravel**, specifically tailored for real estate companies.</li>
+                        <li>Contributed to the optimization of CRM solutions to enhance client operational efficiency.</li>
                     </ul>
                 </div>
                 
+                <div class="p-2 rounded-xl shadow-lg border-l-4 border-blue-600 dark:bg-dark-bg light:bg-white">
+                    <h4 class="text-xl font-bold dark:text-white light:text-gray-900">PHP Developer</h4>
+                    <h5 class="text-md font-semibold text-blue-600 mb-2">InTimeDev | Cairo</h5>
+                    <p class="text-sm dark:text-gray-500 light:text-gray-600 mb-3">Duration: June 2022 – May 2023</p>
+                    <ul class="list-disc list-inside space-y-1 dark:text-gray-300 light:text-gray-700 text-base">
+                        <li>Specialized in PHP development utilizing the **Laravel** framework, including projects with **CakePHP** and **Bitrix24**.</li>
+                        <li>Collaborated on project delivery, focusing on achieving high-quality results.</li>
+                    </ul>
+                </div>
+                
+                <div class="p-2 rounded-xl shadow-lg border-l-4 border-green-600 dark:bg-dark-bg light:bg-white">
+                    <h4 class="text-xl font-bold dark:text-white light:text-gray-900">Junior PHP Developer</h4>
+                    <h5 class="text-md font-semibold text-green-600 mb-2">Atw.ltd | Giza</h5>
+                    <p class="text-sm dark:text-gray-500 light:text-gray-600 mb-3">Duration: July 2021 – June 2022</p>
+                    <ul class="list-disc list-inside space-y-1 dark:text-gray-300 light:text-gray-700 text-base">
+                        <li>Contributed to the creation of the **"BI" ERP system** and the **"beshield" Teaching and Examination system**.</li>
+                        <li>Developed and maintained backend components, ensuring high performance and assisted in database optimization.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-16 lg:py-24 bg-primary-blue text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Looking for a Software Engineer to execute your idea?</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                Let's discuss how to engineer an integrated and scalable system that meets your project's needs in any domain: ERP, CRM, E-Commerce, or Mobile Applications.
+    <section id="contact" class="py-20 lg:py-32 bg-dark-bg dark:bg-dark-bg light:bg-light-primary border-t dark:border-gray-800 light:border-light-primary">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">Need a Robust Backend Architect for Your Project?</h2>
+            <p class="text-xl text-gray-400 dark:text-gray-400 light:text-indigo-200 mb-10">
+                Let's discuss how my expertise in Laravel, scalable APIs, and system architecture can turn your complex idea into a secure, high-performing reality.
             </p>
-            <a href="mailto:mohamed.ahmed@example.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-primary-blue bg-white hover:bg-gray-200 md:py-4 md:text-lg md:px-10 transition duration-300 shadow-lg-custom">
+            <a href="mailto:m7mda3yad@gmail.com" class="inline-flex items-center justify-center px-12 py-5 border-2 border-white text-lg font-semibold rounded-lg text-dark-bg bg-white hover:bg-gray-100 transition duration-300 shadow-tech">
                 <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
-                Contact via Email
+                Email: m7mda3yad@gmail.com
             </a>
+            <div class="mt-6 text-sm dark:text-gray-500 light:text-indigo-300">
+                <p>Phone: **01025381843** | Location: **Cairo – Naser City**</p>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-6">
+    <footer class="bg-dark-bg dark:bg-dark-bg light:bg-gray-900 text-white py-8 border-t dark:border-gray-800 light:border-gray-700">
         <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-3">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://linkedin.com/in/mohamed-ahmed-b866662a9" target="_blank" class="text-gray-400 hover:text-accent-blue transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="https://github.com/m7mda3yad" target="_blank" class="text-gray-400 hover:text-accent-blue transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="m7mda3yad.github.io/portfolio" target="_blank" class="text-gray-400 hover:text-accent-blue transition duration-300"><i data-lucide="layout-grid" class="w-6 h-6"></i></a>
             </div>
             <p class="text-sm text-gray-500">
-                &copy; <span id="year"></span> Mohamed Ahmed. All rights reserved.
+                Engineered by Mohamed Ahmed Ayad. &copy; <span id="year"></span> All rights reserved.
             </p>
         </div>
     </footer>
     
     <script>
-        // JavaScript to toggle mobile menu and update footer year
+        // JavaScript for Dark/Light Mode Toggle
+        const htmlElement = document.documentElement;
+        const modeToggle = document.getElementById('mode-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        function setMode(mode) {
+            const isDark = mode === 'dark';
+            htmlElement.classList.toggle('dark', isDark);
+            htmlElement.classList.toggle('light', !isDark);
+            sunIcon.classList.toggle('hidden', !isDark);
+            moonIcon.classList.toggle('hidden', isDark);
+            localStorage.setItem('theme', mode);
+
+            // Update accent color for the typing effect's cursor border
+            const root = document.documentElement.style;
+            if (isDark) {
+                root.setProperty('--accent-color', '#58a6ff');
+            } else {
+                root.setProperty('--accent-color', '#4f46e5');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setMode(savedTheme);
+        } else {
+            setMode('dark');
+        }
+
+        modeToggle.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                setMode('light');
+            } else {
+                setMode('dark');
+            }
+        });
+
+        // Other utility functions
         document.getElementById('year').textContent = new Date().getFullYear();
 
         const menuButton = document.getElementById('menu-button');
@@ -406,17 +467,16 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close menu on link click (mobile)
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 		function viewPDF() {
-			window.open("Mohamed Ahmed Software Engineer.pdf", "_blank");
+			// This should point to the actual path of your CV PDF
+			window.open("Mohamed Ahmed Ayad CV.pdf", "_blank"); 
 		}
 </script>
-
 
 </body>
 </html>
